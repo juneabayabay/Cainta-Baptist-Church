@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8fa;
+  --foreground: #2c3e50;
+  --accent: #2c3e50;
+  --accent-hover: #1a252f;
+  --muted: #6b7280;
+  --muted-dark: #4b5563;
+  --cream: #eef1f5;
+  --cream-deep: #e2e7ee;
+  --border-soft: #c5ced8;
+  --nav-bg: rgba(255, 255, 255, 0.94);
+  --footer: #1e2832;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-muted-dark: var(--muted-dark);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-border-soft: var(--border-soft);
+  --color-footer: var(--footer);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 380px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: 999px;
+  background: var(--foreground);
+  color: #fff;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.hero-kenburns {
+  animation: kenburns 18s ease-out forwards;
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter {
+  animation: hero-enter 0.9s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-kenburns,
+  .hero-enter {
+    animation: none;
+  }
+}
