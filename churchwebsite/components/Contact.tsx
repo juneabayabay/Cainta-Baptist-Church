@@ -1,57 +1,59 @@
-import { Mail, Send } from "lucide-react";
-import { ChurchDetails } from "@/components/ChurchDetails";
+import { MessageCircle } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-background py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="section-shell surface-contact">
+      <div className="section-inner">
         <Reveal>
-          <div className="mb-10 text-center sm:mb-12 md:mb-14">
-            <h2 className="mb-2 font-serif text-[1.75rem] leading-tight font-semibold tracking-tight sm:text-[2rem] md:text-[2.4rem]">
-              We would love to{" "}
-              <span className="text-accent">hear from you</span>
+          <div className="mb-9 text-center sm:mb-11">
+            <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
+              We&apos;re listening
+            </p>
+            <h2 className="mb-3 font-serif text-[1.75rem] leading-tight font-semibold tracking-tight sm:text-[2.1rem] md:text-[2.4rem]">
+              Say <span className="text-accent">hello</span>
             </h2>
-            <p className="mx-auto max-w-[560px] text-base text-muted sm:text-lg">
-              Need prayer? Want to visit? Just say hello. Message us anytime —
-              you are never a bother.
+            <p className="mx-auto max-w-md text-base text-muted sm:text-lg">
+              Prayer, questions, or visiting — send a note or chat on Facebook.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid items-start gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
+        <div className="grid items-stretch gap-5 lg:grid-cols-[1.25fr_0.75fr] lg:gap-6">
           <Reveal>
-            <ChurchDetails />
+            <div className="h-full rounded-2xl border border-black/[0.05] bg-background px-4 py-5 sm:rounded-3xl sm:px-7 sm:py-8">
+              <h3 className="mb-1 font-serif text-xl font-semibold text-foreground">
+                Send a message
+              </h3>
+              <p className="mb-5 text-sm text-muted sm:mb-6">
+                We will get back to you as soon as we can.
+              </p>
+              <ContactForm />
+            </div>
           </Reveal>
 
-          <Reveal delayMs={100}>
-            <div className="flex h-full min-h-[280px] flex-col justify-center rounded-2xl border border-black/[0.04] bg-white px-5 py-8 text-center sm:px-8 md:px-10">
-              <Send className="mx-auto mb-3 h-9 w-9 text-accent sm:mb-4 sm:h-10 sm:w-10" aria-hidden />
-              <h3 className="mb-1.5 font-serif text-xl font-semibold sm:text-2xl">
-                Coming this Sunday?
-              </h3>
-              <p className="mx-auto mb-6 max-w-[320px] text-sm text-muted sm:text-base">
-                Send us a short note. We will look for you and help you feel at
-                home.
+          <Reveal delayMs={80}>
+            <div className="flex h-full flex-col justify-center rounded-2xl bg-footer px-5 py-7 text-center text-white sm:rounded-3xl sm:px-7 sm:py-8 lg:text-left">
+              <p className="mb-2 text-xs font-semibold tracking-[0.16em] text-white/45 uppercase">
+                Prefer chat?
               </p>
-              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <a
-                  href={`mailto:${site.email}?subject=I'd%20like%20to%20visit%20this%20Sunday`}
-                  className="inline-flex min-h-11 w-full max-w-xs items-center justify-center rounded-full bg-accent px-7 py-3 text-[0.95rem] font-semibold text-white transition hover:-translate-y-0.5 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto"
-                >
-                  <Mail className="mr-2 h-4 w-4" aria-hidden />
-                  Message Us
-                </a>
-                <a
-                  href={site.social.messenger}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 w-full max-w-xs items-center justify-center rounded-full border-2 border-border-soft px-7 py-3 text-[0.95rem] font-semibold text-foreground transition hover:border-foreground hover:bg-foreground hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto"
-                >
-                  Chat on Messenger
-                </a>
-              </div>
+              <h3 className="mb-3 font-serif text-xl font-semibold sm:text-2xl">
+                Message us on Facebook
+              </h3>
+              <p className="mb-6 text-sm leading-relaxed text-white/65">
+                Ask about visiting, prayer, or anything on your heart.
+              </p>
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-footer transition hover:bg-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                <MessageCircle className="h-4 w-4" aria-hidden />
+                Open Facebook Page
+              </a>
             </div>
           </Reveal>
         </div>

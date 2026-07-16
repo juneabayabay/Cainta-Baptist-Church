@@ -25,7 +25,7 @@ export function CopyButton({ value, label = "Copy" }: CopyButtonProps) {
     <button
       type="button"
       onClick={onCopy}
-      className="inline-flex min-h-8 items-center gap-1 rounded-lg border border-border-soft bg-white px-2.5 py-1.5 text-xs font-medium text-foreground transition hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      className="inline-flex min-h-10 flex-1 items-center justify-center gap-1 rounded-full border border-border-soft bg-white px-2.5 py-1.5 text-xs font-medium text-foreground transition hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-[400px]:flex-none"
       aria-label={`${label}: ${value}`}
     >
       {copied ? (

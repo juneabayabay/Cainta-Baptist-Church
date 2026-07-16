@@ -13,11 +13,12 @@ const inter = Inter({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} · ${site.fullName}`,
     template: `%s · ${site.name}`,

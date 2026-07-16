@@ -1,23 +1,27 @@
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
+import { Gallery } from "@/components/Gallery";
 import { Give } from "@/components/Give";
 import { Hero } from "@/components/Hero";
-import { Invitation } from "@/components/Invitation";
 import { NewHere } from "@/components/NewHere";
 import { Services } from "@/components/Services";
+import { Verse } from "@/components/Verse";
 import { Visit } from "@/components/Visit";
-import { Welcome } from "@/components/Welcome";
 
+/**
+ * Visitor journey (one job per section):
+ * Welcome → Scripture → New guest → Who we are → Photos → Visit → Life → Give → Contact
+ */
 export default function Home() {
   return (
     <main id="main" className="overflow-x-hidden">
       <Hero />
-      <Welcome />
+      <Verse />
       <NewHere />
       <About />
+      <Gallery />
       <Visit />
       <Services />
-      <Invitation />
       <Give />
       <Contact />
     </main>
