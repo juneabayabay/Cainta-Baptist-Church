@@ -108,6 +108,21 @@ export function Visit() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delayMs={80}>
+          <div className="mt-5 overflow-hidden rounded-3xl border border-black/[0.05] bg-white shadow-[0_4px_24px_rgba(24,34,45,0.04)] sm:mt-6">
+            <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
+              <iframe
+                title={`Map showing ${site.name}`}
+                src={site.address.mapsEmbedUrl}
+                className="absolute inset-0 h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

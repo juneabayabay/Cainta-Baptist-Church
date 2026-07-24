@@ -4,10 +4,14 @@ import { Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { site } from "@/lib/site";
 
-export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+type Status = "idle" | "sending" | "sent" | "error";
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() ?? "";
+
+export function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -17,18 +21,44 @@ export function ContactForm() {
     const subject = String(data.get("subject") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
 
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      "",
-      message,
-    ].join("\n");
+    if (!accessKey) {
+      // No key yet — fall back to Facebook Messenger so the visitor still gets through
+      window.open(site.social.messenger, "_blank", "noopener,noreferrer");
+      setStatus("sent");
+      form.reset();
+      return;
+    }
 
-    const mailto = `mailto:${site.email}?subject=${encodeURIComponent(subject || "Message from website")}&body=${encodeURIComponent(body)}`;
+    setStatus("sending");
 
-    window.location.href = mailto;
-    setStatus("sent");
-    form.reset();
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name,
+          email,
+          subject: subject || "Message from website",
+          message,
+          from_name: site.name,
+        }),
+      });
+
+      const json = (await res.json()) as { success?: boolean };
+
+      if (!res.ok || !json.success) {
+        throw new Error("Submit failed");
+      }
+
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -44,7 +74,8 @@ export function ContactForm() {
             required
             autoComplete="name"
             placeholder="Your name"
-            className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15"
+            disabled={status === "sending"}
+            className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
           />
         </label>
 
@@ -58,7 +89,8 @@ export function ContactForm() {
             required
             autoComplete="email"
             placeholder="your.email@example.com"
-            className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15"
+            disabled={status === "sending"}
+            className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
           />
         </label>
       </div>
@@ -72,7 +104,8 @@ export function ContactForm() {
           name="subject"
           required
           placeholder="Visit this Sunday, prayer request…"
-          className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15"
+          disabled={status === "sending"}
+          className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
         />
       </label>
 
@@ -85,26 +118,43 @@ export function ContactForm() {
           required
           rows={5}
           placeholder="Tell us how we can help…"
-          className="w-full resize-y rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15"
+          disabled={status === "sending"}
+          className="w-full resize-y rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
         />
       </label>
 
       <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
-          className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-footer transition hover:-translate-y-0.5 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto"
+          disabled={status === "sending"}
+          className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-footer transition hover:-translate-y-0.5 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
         >
           <Send className="h-4 w-4" aria-hidden />
-          Send message
+          {status === "sending" ? "Sending…" : "Send message"}
         </button>
 
         {status === "sent" ? (
           <p className="text-sm text-muted" role="status">
-            Opening your email app…
+            {accessKey
+              ? "Thank you — we received your message."
+              : "Opening Facebook Messenger so we can reply…"}
+          </p>
+        ) : status === "error" ? (
+          <p className="text-sm text-red-700" role="alert">
+            Something went wrong.{" "}
+            <a
+              href={site.social.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline underline-offset-2"
+            >
+              Message us on Facebook
+            </a>{" "}
+            instead.
           </p>
         ) : (
           <p className="text-xs text-muted sm:text-sm">
-            Sends to {site.email}
+            We reply as soon as we can.
           </p>
         )}
       </div>

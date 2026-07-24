@@ -1,5 +1,6 @@
 import { Coffee, DoorOpen, HandHeart, UsersRound } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/site";
 
 const journey = [
   {
@@ -74,6 +75,26 @@ export function NewHere() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delayMs={60}>
+          <div className="mb-10 rounded-3xl border border-black/[0.05] bg-background px-5 py-7 sm:mb-12 sm:px-8 sm:py-8">
+            <h3 className="mb-6 text-center font-serif text-xl font-semibold text-foreground sm:text-[1.35rem]">
+              What to expect
+            </h3>
+            <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6">
+              {site.expect.map((item) => (
+                <li key={item.title}>
+                  <p className="mb-1 text-sm font-semibold text-foreground">
+                    {item.title}
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted">
+                    {item.text}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
 
         <Reveal delayMs={100}>
           <div className="flex justify-center">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { Navbar } from "@/components/Navbar";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
     "church Cainta",
     "Baptist church Rizal",
     "Sunday worship Cainta",
+    "church near me Cainta",
+    "Baptist church near me",
+    "church in Cainta Rizal",
   ],
   openGraph: {
     title: `${site.name} · ${site.fullName}`,
@@ -56,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} antialiased`}>
       <body className="min-h-screen font-sans text-foreground">
+        <JsonLd />
         <a href="#main" className="skip-link">
           Skip to content
         </a>

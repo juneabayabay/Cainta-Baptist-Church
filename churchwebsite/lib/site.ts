@@ -22,7 +22,29 @@ export const site = {
     full: "157 Marick Drive, Subdivision, Cainta, Rizal, Philippines, 1900",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
+    /** Embed for the Visit section map */
+    mapsEmbedUrl:
+      "https://maps.google.com/maps?q=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines&z=16&output=embed",
   },
+  /** Practical first-visit answers — edit anytime */
+  expect: [
+    {
+      title: "What to wear",
+      text: "Come as you are. Casual or Sunday best — both are welcome.",
+    },
+    {
+      title: "How long is Sunday?",
+      text: "Small group starts at 8:00 AM. Worship is about 9:00–11:30 AM.",
+    },
+    {
+      title: "Kids & family",
+      text: "Children are welcome. The whole family belongs here.",
+    },
+    {
+      title: "Parking & finding us",
+      text: "Use Google Maps for Marick Drive. Lost? Call or message us — we will help.",
+    },
+  ],
   pastor: {
     name: "Vien Olaer",
     title: "Pastor",
@@ -43,8 +65,9 @@ export const site = {
   social: {
     facebook: "https://www.facebook.com/CaintaBaptistChurch",
     facebookName: "Cainta Baptist Church",
-    youtube: "https://youtube.com/",
-    instagram: "https://instagram.com/",
+    /** Leave empty until you have a real channel — icons stay hidden */
+    youtube: "",
+    instagram: "",
     messenger: "https://m.me/CaintaBaptistChurch",
     photos: "https://www.facebook.com/CaintaBaptistChurch/photos",
   },
