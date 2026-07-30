@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ExternalLink, Star } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
+import { imageQuality, sizesFeature } from "@/lib/images";
 import { site } from "@/lib/site";
 
 export function Testimonials() {
@@ -32,9 +33,9 @@ export function Testimonials() {
                 src="/community-joy.jpg"
                 alt="Church family sharing joy after worship"
                 fill
-                sizes="(max-width: 1023px) 100vw, 55vw"
+                sizes={sizesFeature}
+                quality={imageQuality.gallery}
                 className="object-cover"
-                quality={85}
               />
             </div>
           </Reveal>

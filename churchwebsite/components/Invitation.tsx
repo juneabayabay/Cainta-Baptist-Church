@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import { imageQuality, sizesFullWidth } from "@/lib/images";
 
 export function Invitation() {
   return (
@@ -13,9 +14,9 @@ export function Invitation() {
           src="/invite-sanctuary.jpg"
           alt=""
           fill
-          sizes="100vw"
+          sizes={sizesFullWidth}
+          quality={imageQuality.fullBleed}
           className="object-cover"
-          quality={85}
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,28,56,0.82)_0%,rgba(18,28,56,0.92)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_25%,rgba(212,176,106,0.22),transparent_58%)]" />

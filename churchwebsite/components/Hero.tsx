@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Clock, Heart } from "lucide-react";
+import { imageQuality, sizesFullWidth } from "@/lib/images";
 import { site } from "@/lib/site";
 
 export function Hero() {
@@ -8,16 +9,19 @@ export function Hero() {
       id="home"
       className="relative flex min-h-[100svh] items-end overflow-hidden md:min-h-[100svh] md:items-center"
     >
-      <div className="absolute inset-0" aria-hidden>
-        <Image
-          src="/hero-come-home.jpg"
-          alt="Families welcomed outside Cainta Baptist Church"
-          fill
-          priority
-          quality={95}
-          sizes="100vw"
-          className="object-cover object-[72%_center] sm:object-[68%_center] hero-kenburns scale-105"
-        />
+      <div className="absolute inset-0 overflow-hidden" aria-hidden>
+        <div className="hero-media hero-kenburns">
+          <Image
+            src="/hero-come-home.jpg"
+            alt="Families welcomed outside Cainta Baptist Church"
+            fill
+            priority
+            fetchPriority="high"
+            quality={imageQuality.hero}
+            sizes={sizesFullWidth}
+            className="object-cover object-[72%_center] sm:object-[68%_center] md:object-[65%_center]"
+          />
+        </div>
         <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(18,28,56,0.93)_0%,rgba(30,58,114,0.58)_42%,rgba(30,58,114,0.15)_72%,transparent_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,28,56,0.35)_0%,transparent_40%,rgba(18,28,56,0.62)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(212,176,106,0.18),transparent_50%)]" />

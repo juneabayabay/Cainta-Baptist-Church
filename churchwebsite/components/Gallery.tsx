@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
+import { imageQuality, sizesGallery } from "@/lib/images";
 import { site } from "@/lib/site";
 
 export function Gallery() {
@@ -34,8 +35,9 @@ export function Gallery() {
                     src={photo.src}
                     alt={photo.alt}
                     fill
-                    sizes="(max-width: 639px) 50vw, (max-width: 1023px) 50vw, 33vw"
-                    className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                    quality={imageQuality.gallery}
+                    sizes={sizesGallery}
+                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--footer)]/85 via-[color:var(--footer)]/20 to-transparent opacity-90 transition group-hover:opacity-95" />
                   <figcaption className="absolute right-0 bottom-0 left-0 p-3 sm:p-4">

@@ -340,15 +340,30 @@ iframe {
 
 @keyframes kenburns {
   from {
-    transform: scale(1.04);
+    transform: scale(1);
   }
   to {
-    transform: scale(1.1);
+    transform: scale(1.035);
   }
 }
 
 .hero-kenburns {
-  animation: kenburns 28s ease-out forwards;
+  animation: kenburns 32s ease-out forwards;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.hero-media {
+  position: absolute;
+  inset: -3%;
+  overflow: hidden;
+}
+
+.hero-media img {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 @keyframes hero-enter {
