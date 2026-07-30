@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
@@ -36,8 +36,6 @@ function PastorAvatar() {
 }
 
 export function About() {
-  const hasStory = Boolean(site.story.body.trim());
-
   return (
     <section id="about" className="section-shell surface-soft">
       <div className="section-inner">
@@ -46,8 +44,8 @@ export function About() {
             eyebrow="About"
             title={
               <>
-                Hope rooted in{" "}
-                <span className="text-accent">Christ</span>
+                A church that walks{" "}
+                <span className="text-accent">with you</span>
               </>
             }
           />
@@ -72,19 +70,6 @@ export function About() {
           </Reveal>
         </div>
 
-        {hasStory ? (
-          <Reveal delayMs={40}>
-            <article className="card mb-8 px-5 py-6 text-center sm:px-8">
-              <p className="section-eyebrow section-eyebrow-center mb-2">
-                {site.story.title}
-              </p>
-              <p className="mx-auto max-w-2xl text-[0.95rem] text-muted-dark">
-                {site.story.body}
-              </p>
-            </article>
-          </Reveal>
-        ) : null}
-
         <div className="grid items-stretch gap-4 lg:grid-cols-2 lg:gap-5">
           <Reveal variant="left">
             <figure className="card flex h-full flex-col bg-footer px-6 py-7 text-white sm:px-8">
@@ -97,26 +82,27 @@ export function About() {
                   {site.pastor.title}
                 </p>
               </figcaption>
-              <blockquote className="mt-5 border-t border-white/15 pt-5 text-[0.95rem] leading-relaxed text-white/75 italic">
+              <blockquote className="mt-5 border-t border-white/15 pt-5 text-[0.95rem] leading-relaxed text-white/80 italic">
                 &ldquo;{site.pastor.quote}&rdquo;
               </blockquote>
             </figure>
           </Reveal>
 
           <Reveal variant="right" delayMs={80}>
-            <div className="flex h-full flex-col justify-center rounded-2xl bg-primary-soft/50 px-6 py-8 text-center lg:px-8 lg:text-left">
+            <div className="flex h-full flex-col justify-center rounded-2xl bg-primary-soft/60 px-6 py-8 text-center lg:px-8 lg:text-left">
               <h3 className="mb-3 font-serif text-xl font-semibold sm:text-2xl">
-                We would love to meet you
+                Your next step can start this Sunday
               </h3>
               <p className="mb-6 text-[0.95rem] text-muted-dark">
-                Questions or planning a visit? We&apos;re glad to help.
+                You do not need a perfect past — only a willing heart. We will
+                be glad you came.
               </p>
               <a
-                href="#contact"
+                href="#visit"
                 className="btn btn-primary mx-auto w-full max-w-xs lg:mx-0 lg:w-auto"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden />
-                Get in touch
+                Plan your visit
+                <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
             </div>
           </Reveal>

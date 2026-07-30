@@ -35,7 +35,7 @@ export function MobileActionBar() {
           className="flex flex-[1.15] flex-col items-center justify-center gap-0.5 rounded-xl bg-primary px-2 py-2 text-[0.7rem] font-semibold text-white transition hover:bg-primary-hover"
         >
           <HeartHandshake className="h-4 w-4" aria-hidden />
-          I&apos;m new
+          I need hope
         </a>
       </div>
     </div>

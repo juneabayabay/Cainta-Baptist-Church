@@ -5,26 +5,28 @@ import { FitForYou } from "@/components/FitForYou";
 import { Gallery } from "@/components/Gallery";
 import { Give } from "@/components/Give";
 import { Hero } from "@/components/Hero";
+import { Invitation } from "@/components/Invitation";
 import { NewHere } from "@/components/NewHere";
 import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
 import { Verse } from "@/components/Verse";
 import { Visit } from "@/components/Visit";
 
-/** Visitor flow: where/when → first visit → fit → about → FAQ → community → give → contact */
+/** Heart first → practical → belonging → respond */
 export default function Home() {
   return (
     <main id="main" className="main-with-mobile-bar overflow-x-hidden">
       <Hero />
-      <Visit />
+      <Verse />
       <NewHere />
+      <Visit />
+      <Invitation />
       <FitForYou />
       <About />
-      <Verse />
-      <FAQ />
       <Gallery />
-      <Services />
       <Testimonials />
+      <Services />
+      <FAQ />
       <Give />
       <Contact />
     </main>

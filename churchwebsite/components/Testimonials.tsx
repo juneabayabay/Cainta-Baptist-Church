@@ -17,8 +17,8 @@ export function Testimonials() {
             eyebrow="Stories"
             title={
               <>
-                From our{" "}
-                <span className="text-accent">community</span>
+                Hearts that found{" "}
+                <span className="text-accent">home</span>
               </>
             }
           />

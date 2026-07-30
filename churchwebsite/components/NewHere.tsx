@@ -13,13 +13,14 @@ export function NewHere() {
         <Reveal>
           <SectionHeader
             id="new-here-heading"
-            eyebrow="New here"
+            eyebrow="First Sunday"
             title={
               <>
-                Your first Sunday is{" "}
-                <span className="text-accent">simple</span>
+                Nervous? That&apos;s{" "}
+                <span className="text-accent">okay</span>
               </>
             }
+            description="You do not need to have it all together. Just come — we will take care of the rest."
           />
         </Reveal>
 
@@ -38,6 +39,14 @@ export function NewHere() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delayMs={100}>
+          <div className="mt-8 flex justify-center">
+            <a href="#visit" className="btn btn-primary">
+              See times &amp; directions
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

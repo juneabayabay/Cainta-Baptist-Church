@@ -3,14 +3,15 @@ export const site = {
   shortName: "CBC",
   fullName: "Cainta Baptist Church",
   denomination: "Baptist",
-  tagline: "You are welcome here.",
-  description: "A Baptist church in Cainta, Rizal — worship and community every Sunday.",
+  tagline: "Come as you are. You belong here.",
+  description:
+    "Cainta Baptist Church — a place of hope, rest, and belonging in Cainta, Rizal.",
   heroMeta: "Cainta, Rizal · Sundays from 9:00 AM",
-  servingAreas: "Serving Cainta, Pasig, Taytay, and Antipolo.",
-  language: "Primarily English. Tagalog welcome.",
+  servingAreas: "Cainta, Pasig, Taytay, Antipolo",
+  language: "English services. Tagalog welcome.",
   verse: {
-    text: "His mercies are new every morning.",
-    reference: "Lamentations 3:22–23",
+    text: "Come to me, all who are weary and burdened, and I will give you rest.",
+    reference: "Matthew 11:28",
   },
   url: "https://caintabaptist.org",
   email: "caintabaptistchurchph@gmail.com",
@@ -43,69 +44,85 @@ export const site = {
       "https://maps.google.com/maps?q=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines&z=17&output=embed",
   },
   visit: {
-    headline: "Times, map, and directions.",
+    headline: "We saved a seat for you this Sunday.",
   },
-  fitForYou: [
-    { title: "Baptist", text: "Jesus-centered. Bible-based. Believer's baptism." },
-    { title: "Language", text: "English services. Tagalog welcome." },
-    { title: "Worship", text: "Warm singing, clear teaching, prayer." },
-    { title: "Families", text: "Children and families belong here." },
-  ],
   beliefs: [
-    { title: "The Bible", text: "God's Word guides our life and faith." },
-    { title: "Jesus Christ", text: "Lord and Savior — forgiveness and new life." },
-    { title: "Grace", text: "Saved by grace, not by being good enough." },
-    { title: "Church", text: "A family that worships, grows, and serves." },
+    {
+      title: "Jesus",
+      text: "He loves you and offers forgiveness and new life.",
+    },
+    {
+      title: "Grace",
+      text: "You do not have to be perfect — come as you are.",
+    },
+    {
+      title: "The Bible",
+      text: "God's Word brings hope, truth, and direction.",
+    },
+    {
+      title: "Family",
+      text: "We walk with one another — no one has to go alone.",
+    },
   ],
   faq: [
     {
       question: "Do I need to register?",
-      answer: "No. Just come. Greeters will help you find a seat.",
+      answer: "No. Just come — we will welcome you at the door.",
     },
     {
       question: "What time should I arrive?",
-      answer: "Small group 9:00–10:00 AM. Worship 10:00–11:30 AM. Arrive a few minutes early.",
+      answer: "Small group 9:00–10:00 AM. Worship 10:00–11:30 AM.",
     },
     {
       question: "Is there parking?",
-      answer: "Street parking nearby. Message us if you need help.",
+      answer: "Yes, street parking nearby. Message us if you need help.",
     },
     {
       question: "Are children welcome?",
-      answer: "Yes. Families worship together. Ask a greeter for help anytime.",
+      answer: "Always. Your whole family belongs here.",
     },
     {
-      question: "Can I visit if I'm not Baptist?",
-      answer: "Absolutely. Everyone is welcome.",
+      question: "What if I'm not Baptist?",
+      answer: "You are still welcome. Everyone has a place here.",
     },
   ],
   testimonials: [
     {
-      quote: "I felt welcome from the first Sunday.",
+      quote: "I walked in nervous — and left feeling like I finally belonged.",
       author: "First-time guest",
     },
     {
-      quote: "Clear teaching and a caring church family.",
+      quote: "This church reminded me that God still has hope for my life.",
       author: "Church member",
     },
   ],
   expect: [
-    { title: "What to wear", text: "Come as you are — casual or Sunday best." },
-    { title: "Kids & family", text: "Children are welcome in every gathering." },
-    { title: "When you arrive", text: "A greeter will help you get settled." },
+    {
+      title: "Come as you are",
+      text: "No dress code. Bring your questions and your heart.",
+    },
+    {
+      title: "You are not alone",
+      text: "A greeter will meet you and help you feel at home.",
+    },
+    {
+      title: "Bring your family",
+      text: "Children are loved here. There is room for everyone.",
+    },
   ],
   pastor: {
     name: "Vien Olaer",
     title: "Pastor",
-    quote: "You do not have to walk alone. God gives fresh hope every morning.",
+    quote:
+      "Whoever you are and whatever you carry — Jesus is waiting with open arms. So are we.",
     photo: "",
   },
-  vision: "A church in Cainta where people know Jesus and grow in hope.",
-  mission: "Welcome warmly. Teach clearly. Walk with people step by step.",
+  vision: "A home in Cainta where tired hearts find Jesus and fresh hope.",
+  mission: "To welcome, love, and walk with people toward Christ.",
   story: {
     title: "Our story",
     body: "",
-    placeholder: "Our church story will be shared here soon.",
+    placeholder: "",
   },
   social: {
     facebook: "https://www.facebook.com/CaintaBaptistChurch",
@@ -124,7 +141,7 @@ export const site = {
     {
       src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80",
       alt: "Church family sharing a warm moment",
-      caption: "Family",
+      caption: "Belonging",
     },
     {
       src: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1200&q=80",
@@ -139,7 +156,7 @@ export const site = {
     {
       src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
       alt: "Music and praise during service",
-      caption: "Praise",
+      caption: "Hope",
     },
     {
       src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
@@ -173,22 +190,22 @@ export const site = {
     {
       title: "Sunday Small Group",
       time: "Sunday · 9:00–10:00 AM",
-      description: "Connect and pray before worship.",
+      description: "Find friends and pray together.",
     },
     {
       title: "Sunday Worship",
       time: "Sunday · 10:00–11:30 AM",
-      description: "Sing, hear God's Word, leave encouraged.",
+      description: "Meet God in song and His Word.",
     },
     {
       title: "Prayer & Bible Study",
       time: "Wednesday · 6:30 PM",
-      description: "Midweek prayer and Scripture.",
+      description: "Grow midweek with prayer and Scripture.",
     },
     {
       title: "Community Outreach",
       time: "As scheduled",
-      description: "Serving neighbors in Cainta.",
+      description: "Love and serve our neighbors in Cainta.",
     },
   ],
 } as const;

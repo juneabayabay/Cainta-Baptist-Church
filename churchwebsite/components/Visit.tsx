@@ -15,8 +15,8 @@ export function Visit() {
             eyebrow="Visit"
             title={
               <>
-                Join us this{" "}
-                <span className="text-accent">Sunday</span>
+                We saved a seat{" "}
+                <span className="text-accent">for you</span>
               </>
             }
             description={site.visit.headline}

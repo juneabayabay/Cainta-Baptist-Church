@@ -19,8 +19,8 @@ export function Contact() {
             eyebrow="Contact"
             title={
               <>
-                Say{" "}
-                <span className="text-accent">hello</span>
+                We&apos;re listening —{" "}
+                <span className="text-accent">reach out</span>
               </>
             }
           />

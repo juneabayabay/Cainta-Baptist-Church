@@ -18,8 +18,8 @@ export function Gallery() {
             eyebrow="Community"
             title={
               <>
-                Life{" "}
-                <span className="text-accent">together</span>
+                Moments of{" "}
+                <span className="text-accent">grace</span>
               </>
             }
           />
