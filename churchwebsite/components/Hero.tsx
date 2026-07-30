@@ -10,30 +10,30 @@ export function Hero() {
     >
       <div className="absolute inset-0" aria-hidden>
         <Image
-          src="/hero-sunrise-cross.jpg"
+          src="/hero-welcome-congregation.jpg"
           alt=""
           fill
           priority
           quality={95}
           sizes="100vw"
-          className="object-cover object-[center_40%] hero-kenburns scale-105"
+          className="object-cover object-[65%_center] hero-kenburns scale-105"
         />
-        {/* Left-weighted overlay — keeps sunrise & cross visible, text readable */}
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(26,47,84,0.82)_0%,rgba(30,58,138,0.45)_42%,rgba(30,58,138,0.12)_72%,transparent_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,47,84,0.25)_0%,transparent_35%,rgba(26,47,84,0.55)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_25%,rgba(201,169,98,0.12),transparent_55%)]" />
+        {/* Left-heavy gradient — headline space + congregation visible right */}
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(26,47,84,0.88)_0%,rgba(30,58,138,0.52)_38%,rgba(30,58,138,0.08)_68%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,47,84,0.2)_0%,transparent_30%,rgba(26,47,84,0.45)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_40%,rgba(201,169,98,0.14),transparent_50%)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1080px] px-4 pt-28 pb-20 sm:px-6 sm:pt-32 sm:pb-24 lg:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-xl lg:max-w-2xl">
           <p className="hero-enter mb-3 text-xs font-semibold tracking-[0.14em] text-accent uppercase">
             {site.name}
           </p>
 
           <h1 className="hero-enter hero-enter-delay-1 mb-4 font-serif text-[clamp(2rem,6vw,3.25rem)] leading-[1.1] font-semibold text-white">
-            Hope begins
+            You are welcome here.
             <span className="mt-2 block text-[0.88em] font-medium text-accent">
-              with a fresh start in Christ.
+              Loved, safe, and hopeful in Christ.
             </span>
           </h1>
 
