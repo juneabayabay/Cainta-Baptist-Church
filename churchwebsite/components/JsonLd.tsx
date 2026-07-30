@@ -43,9 +43,9 @@ export function JsonLd() {
     sameAs: [
       site.social.facebook,
       site.googleBusiness.mapsPlaceUrl,
-      site.social.youtube,
-      site.social.instagram,
-    ].filter(Boolean),
+      ...(site.social.youtube ? [site.social.youtube] : []),
+      ...(site.social.instagram ? [site.social.instagram] : []),
+    ],
   };
 
   return (

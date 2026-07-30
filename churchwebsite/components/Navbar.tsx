@@ -6,10 +6,20 @@ import { site } from "@/lib/site";
 const links = [
   { href: "#visit", label: "Visit" },
   { href: "#new-here", label: "New Here" },
-  { href: "#fit", label: "About Us" },
+  { href: "#about", label: "About" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
+
+const sectionIds = [
+  "home",
+  "visit",
+  "new-here",
+  "fit",
+  "about",
+  "faq",
+  "contact",
+] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,32 +34,17 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const ids = [
-      "home",
-      "visit",
-      "new-here",
-      "fit",
-      "about",
-      "faq",
-      "photos",
-      "contact",
-    ];
     const observers: IntersectionObserver[] = [];
 
-    ids.forEach((id) => {
+    sectionIds.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
-            const hash =
-              id === "home"
-                ? ""
-                : id === "fit" || id === "about"
-                  ? "#fit"
-                  : `#${id}`;
-            setActive(hash);
-          }
+          if (!entry.isIntersecting) return;
+          if (id === "home") setActive("");
+          else if (id === "fit") setActive("#about");
+          else setActive(`#${id}`);
         },
         { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
       );

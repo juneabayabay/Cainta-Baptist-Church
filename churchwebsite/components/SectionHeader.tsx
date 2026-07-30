@@ -19,18 +19,18 @@ export function SectionHeader({
 
   return (
     <header
-      className={`mb-10 sm:mb-12 ${centered ? "mx-auto max-w-2xl text-center" : "max-w-xl"}`}
+      className={`mb-8 sm:mb-10 ${centered ? "mx-auto max-w-xl text-center" : "max-w-lg"}`}
     >
       <p
-        className={`section-eyebrow mb-3 ${centered ? "section-eyebrow-center" : ""}`}
+        className={`section-eyebrow mb-2.5 ${centered ? "section-eyebrow-center" : ""}`}
       >
         {eyebrow}
       </p>
-      <h2 id={id} className="section-title mb-3">
+      <h2 id={id} className="section-title">
         {title}
       </h2>
       {description ? (
-        <p className="text-base leading-relaxed text-muted sm:text-lg">
+        <p className="mt-2.5 text-[0.95rem] leading-relaxed text-muted sm:text-base">
           {description}
         </p>
       ) : null}

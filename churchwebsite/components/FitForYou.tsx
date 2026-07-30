@@ -13,22 +13,21 @@ export function FitForYou() {
         <Reveal>
           <SectionHeader
             id="fit-heading"
-            eyebrow="Find your fit"
+            eyebrow="Beliefs"
             title={
               <>
                 Is {site.shortName}{" "}
-                <span className="text-secondary">for you?</span>
+                <span className="text-accent">for you?</span>
               </>
             }
-            description="A quick look at who we are — so you can decide if we'd be a good fit before you visit."
           />
         </Reveal>
 
-        <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {site.fitForYou.map((item, i) => (
-            <Reveal key={item.title} delayMs={i * 50}>
-              <article className="card h-full px-5 py-5 sm:px-6 sm:py-6">
-                <h3 className="mb-2 font-serif text-base font-semibold text-foreground">
+            <Reveal key={item.title} delayMs={i * 70} variant="scale">
+              <article className="card h-full border-t-2 border-t-accent px-5 py-5">
+                <h3 className="mb-1.5 font-serif text-base font-semibold">
                   {item.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted">{item.text}</p>
@@ -37,39 +36,20 @@ export function FitForYou() {
           ))}
         </div>
 
-        <Reveal delayMs={40}>
-          <div className="card bg-secondary-light/35 px-5 py-5 sm:px-7 sm:py-6">
-            <p className="mb-1 text-sm font-semibold text-foreground">
-              Language at CBC
-            </p>
-            <p className="text-sm leading-relaxed text-muted-dark">
-              {site.language}
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delayMs={60}>
-          <div className="mt-10">
-            <h3 className="mb-5 text-center font-serif text-xl font-semibold sm:text-2xl">
-              What we believe
-            </h3>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {site.beliefs.map((belief) => (
-                <article
-                  key={belief.title}
-                  className="card px-5 py-5 sm:px-6 sm:py-6"
-                >
-                  <h4 className="mb-2 font-semibold text-foreground">
-                    {belief.title}
-                  </h4>
-                  <p className="text-sm leading-relaxed text-muted">
-                    {belief.text}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </Reveal>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {site.beliefs.map((belief, i) => (
+            <Reveal key={belief.title} delayMs={i * 50}>
+              <article className="rounded-2xl bg-primary-soft/70 px-4 py-4">
+                <h4 className="mb-1 text-sm font-semibold text-primary">
+                  {belief.title}
+                </h4>
+                <p className="text-sm leading-relaxed text-muted-dark">
+                  {belief.text}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

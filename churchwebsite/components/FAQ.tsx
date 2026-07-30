@@ -19,18 +19,17 @@ export function FAQ() {
         <Reveal>
           <SectionHeader
             id="faq-heading"
-            eyebrow="Questions"
+            eyebrow="FAQ"
             title={
               <>
-                Common questions{" "}
-                <span className="text-secondary">answered</span>
+                Quick{" "}
+                <span className="text-accent">answers</span>
               </>
             }
-            description="Straight answers to help you feel ready before your first visit."
           />
         </Reveal>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {site.faq.map((item, i) => {
             const isOpen = openIndex === i;
             const panelId = `faq-panel-${i}`;
@@ -46,13 +45,13 @@ export function FAQ() {
                       aria-expanded={isOpen}
                       aria-controls={panelId}
                       onClick={() => setOpenIndex(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
+                      className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6"
                     >
-                      <span className="font-serif text-base font-semibold text-foreground sm:text-[1.05rem]">
+                      <span className="font-serif text-[0.95rem] font-semibold sm:text-base">
                         {item.question}
                       </span>
                       <ChevronDown
-                        className={`h-5 w-5 shrink-0 text-secondary transition-transform ${
+                        className={`h-5 w-5 shrink-0 text-accent transition-transform duration-300 ${
                           isOpen ? "rotate-180" : ""
                         }`}
                         aria-hidden
@@ -64,9 +63,9 @@ export function FAQ() {
                     role="region"
                     aria-labelledby={buttonId}
                     hidden={!isOpen}
-                    className="border-t border-[color:var(--foreground)]/6 px-5 pb-4 sm:px-6 sm:pb-5"
+                    className="border-t border-[color:var(--foreground)]/6 px-5 pb-4 sm:px-6"
                   >
-                    <p className="pt-3 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+                    <p className="pt-3 text-sm leading-relaxed text-muted">
                       {item.answer}
                     </p>
                   </div>

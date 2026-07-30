@@ -35,7 +35,7 @@ const methods = [
   },
   {
     icon: Building2,
-    title: "Bank Transfer",
+    title: "Bank",
     detail: `${site.giving.bank.bank} · ${site.giving.bank.account}`,
     hint: site.giving.bank.name,
     href: site.social.facebook,
@@ -52,22 +52,21 @@ export function Give() {
       <div className="section-inner section-inner-narrow">
         <Reveal>
           <SectionHeader
-            eyebrow="Generosity"
-            title="Give with joy"
-            description="Your generosity helps us share hope and serve families across Cainta."
+            eyebrow="Give"
+            title="Partner with joy"
+            description="Your gift helps share hope in Cainta."
           />
         </Reveal>
 
         {needsDetails ? (
           <Reveal>
-            <p className="card mb-5 px-5 py-4 text-center text-sm text-muted">
-              Giving details will be posted here soon. Message us and we will
-              send the right account information.
+            <p className="card mb-4 px-5 py-4 text-center text-sm text-muted">
+              Account details coming soon — message us anytime.
             </p>
           </Reveal>
         ) : null}
 
-        <Reveal>
+        <Reveal variant="scale">
           <div className="card overflow-hidden">
             <ul className="divide-y divide-[color:var(--foreground)]/6">
               {methods.map(
@@ -75,20 +74,16 @@ export function Give() {
                   const isPlaceholder = looksLikePlaceholder(detail);
 
                   return (
-                    <li key={title} className="px-5 py-5 sm:px-6">
-                      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <li key={title} className="px-5 py-4 sm:px-6">
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex min-w-0 items-start gap-3">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary-light text-primary">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary">
                             <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden />
                           </div>
                           <div className="min-w-0">
-                            <h3 className="text-sm font-semibold text-foreground">
-                              {title}
-                            </h3>
+                            <h3 className="text-sm font-semibold">{title}</h3>
                             <p className="mt-0.5 text-sm font-medium text-primary">
-                              {isPlaceholder
-                                ? "Message us for details"
-                                : detail}
+                              {isPlaceholder ? "Message us for details" : detail}
                             </p>
                             <p className="text-xs text-muted">{hint}</p>
                           </div>
@@ -99,14 +94,12 @@ export function Give() {
                             <CopyButton value={copyValue} label="Copy" />
                           ) : null}
                           <a
-                            href={
-                              isPlaceholder ? site.social.messenger : href
-                            }
+                            href={isPlaceholder ? site.social.messenger : href}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary px-4 py-2 text-xs"
                           >
-                            {isPlaceholder ? "Message us" : cta}
+                            {isPlaceholder ? "Message" : cta}
                             <ExternalLink className="h-3 w-3" aria-hidden />
                           </a>
                         </div>
@@ -119,17 +112,16 @@ export function Give() {
           </div>
         </Reveal>
 
-        <Reveal delayMs={80}>
-          <div className="mt-5 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
-            <p className="text-sm text-muted">Questions about giving?</p>
+        <Reveal delayMs={60}>
+          <div className="mt-4 flex justify-center">
             <a
-              href={site.social.facebook}
+              href={site.social.messenger}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary px-4 py-2 text-sm"
             >
               <MessageCircle className="h-3.5 w-3.5" aria-hidden />
-              Message us
+              Questions? Message us
             </a>
           </div>
         </Reveal>

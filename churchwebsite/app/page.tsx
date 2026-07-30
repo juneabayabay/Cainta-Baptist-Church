@@ -11,10 +11,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Verse } from "@/components/Verse";
 import { Visit } from "@/components/Visit";
 
-/**
- * Visitor journey — practical first, then belonging:
- * Where/when → First visit → Fit/beliefs → About → FAQ → Community → Give → Contact
- */
+/** Visitor flow: where/when → first visit → fit → about → FAQ → community → give → contact */
 export default function Home() {
   return (
     <main id="main" className="main-with-mobile-bar overflow-x-hidden">

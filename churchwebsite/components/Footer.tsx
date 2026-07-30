@@ -5,9 +5,8 @@ import { site } from "@/lib/site";
 const links = [
   { href: "#visit", label: "Visit" },
   { href: "#new-here", label: "New Here" },
-  { href: "#fit", label: "Beliefs" },
+  { href: "#about", label: "About" },
   { href: "#faq", label: "FAQ" },
-  { href: "#photos", label: "Photos" },
   { href: "#give", label: "Give" },
   { href: "#contact", label: "Contact" },
 ];
@@ -15,12 +14,12 @@ const links = [
 export function Footer() {
   return (
     <footer
-      className="bg-primary pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white/70 lg:pb-0"
+      className="bg-footer pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white/70 lg:pb-0"
       role="contentinfo"
     >
       <div className="mx-auto max-w-[1080px] px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <div>
+        <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
+          <div className="max-w-xs">
             <a
               href="#home"
               className="font-serif text-base font-semibold text-white hover:text-accent"
@@ -31,8 +30,8 @@ export function Footer() {
             <p className="mt-0.5 text-xs text-white/40">{site.address.line2}</p>
           </div>
 
-          <nav aria-label="Footer">
-            <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+          <nav aria-label="Footer" className="max-w-md">
+            <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 sm:justify-end">
               {links.map((link) => (
                 <li key={link.label}>
                   <a
