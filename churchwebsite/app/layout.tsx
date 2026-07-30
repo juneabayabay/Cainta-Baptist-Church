@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
     locale: "en_PH",
-    images: [{ url: "/hero-welcome-congregation.jpg", alt: site.name }],
+    images: [{ url: "/hero-welcome-v2.jpg", alt: site.name }],
   },
   icons: {
     icon: "/logo.png",

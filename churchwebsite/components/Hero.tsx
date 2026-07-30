@@ -10,17 +10,16 @@ export function Hero() {
     >
       <div className="absolute inset-0" aria-hidden>
         <Image
-          src="/hero-welcome-congregation.jpg"
+          src="/hero-welcome-v2.jpg"
           alt="Congregation gathering outside Cainta Baptist Church"
           fill
           priority
           quality={95}
           sizes="100vw"
-          className="object-cover object-[65%_center] hero-kenburns scale-105"
+          className="object-cover object-[70%_center] hero-kenburns scale-105"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(15,35,72,0.9)_0%,rgba(26,58,143,0.55)_40%,rgba(26,58,143,0.1)_70%,transparent_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,35,72,0.25)_0%,transparent_35%,rgba(15,35,72,0.5)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_82%_35%,rgba(212,181,106,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(15,35,72,0.88)_0%,rgba(26,58,143,0.48)_38%,rgba(26,58,143,0.08)_68%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,35,72,0.2)_0%,transparent_40%,rgba(15,35,72,0.45)_100%)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1080px] px-4 pt-28 pb-20 sm:px-6 sm:pt-32 sm:pb-24 lg:px-8">
@@ -33,10 +32,21 @@ export function Hero() {
             You are welcome here.
           </h1>
 
-          <p className="hero-enter hero-enter-delay-2 mb-6 inline-flex items-center gap-2 text-sm font-medium text-white/90 sm:text-base">
+          <p className="hero-enter hero-enter-delay-2 mb-2 inline-flex items-center gap-2 text-sm font-medium text-white/90 sm:text-base">
             <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-            {site.heroMeta}
+            Cainta, Rizal
           </p>
+
+          <div className="hero-enter hero-enter-delay-2 mb-8 space-y-1 text-sm text-white/85 sm:text-[0.95rem]">
+            <p>
+              <span className="font-semibold text-accent">Small Group</span>
+              {" · "}9:00–10:00 AM
+            </p>
+            <p>
+              <span className="font-semibold text-accent">Worship</span>
+              {" · "}10:00–11:30 AM
+            </p>
+          </div>
 
           <div className="hero-enter hero-enter-delay-3 flex flex-col gap-3 sm:flex-row">
             <a href="#visit" className="btn btn-gold w-full sm:w-auto">

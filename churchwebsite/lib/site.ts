@@ -5,7 +5,7 @@ export const site = {
   denomination: "Baptist",
   tagline: "You are welcome here.",
   description: "A Baptist church in Cainta, Rizal — worship and community every Sunday.",
-  heroMeta: "Cainta, Rizal · Sundays 9:00 AM",
+  heroMeta: "Cainta, Rizal · Sundays from 9:00 AM",
   servingAreas: "Serving Cainta, Pasig, Taytay, and Antipolo.",
   language: "Primarily English. Tagalog welcome.",
   verse: {
@@ -64,7 +64,7 @@ export const site = {
     },
     {
       question: "What time should I arrive?",
-      answer: "Small group 8:00 AM. Worship 9:00–11:30 AM. Arrive 10 minutes early.",
+      answer: "Small group 9:00–10:00 AM. Worship 10:00–11:30 AM. Arrive a few minutes early.",
     },
     {
       question: "Is there parking?",
@@ -148,7 +148,7 @@ export const site = {
     },
   ],
   hours: {
-    sunday: { open: "08:00", close: "11:30" },
+    sunday: { open: "09:00", close: "11:30" },
     wednesday: { open: "18:30", close: "20:30" },
   },
   giving: {
@@ -172,12 +172,12 @@ export const site = {
   services: [
     {
       title: "Sunday Small Group",
-      time: "Sunday · 8:00–9:00 AM",
+      time: "Sunday · 9:00–10:00 AM",
       description: "Connect and pray before worship.",
     },
     {
       title: "Sunday Worship",
-      time: "Sunday · 9:00–11:30 AM",
+      time: "Sunday · 10:00–11:30 AM",
       description: "Sing, hear God's Word, leave encouraged.",
     },
     {

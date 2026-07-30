@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Holy & Elegant — richer depth */
-  --background: #eef1f7;
+  /* Holy & Elegant — cleaner, clearer */
+  --background: #f5f7fb;
   --surface: #ffffff;
-  --foreground: #14264a;
-  --primary: #1a3a8f;
-  --primary-hover: #12307a;
-  --primary-soft: #e8eefc;
-  --secondary: #c9a55a;
-  --secondary-hover: #b89245;
-  --secondary-light: #e8ecf4;
-  --accent: #d4b56a;
-  --accent-hover: #c4a255;
-  --muted: #5a6b84;
-  --muted-dark: #3d4f6a;
-  --cream: #f7f8fc;
-  --border-soft: #d5dce8;
-  --footer: #0f2348;
-  --glow-gold: rgba(212, 181, 106, 0.35);
-  --glow-blue: rgba(26, 58, 143, 0.12);
+  --foreground: #1a2744;
+  --primary: #1e3a8a;
+  --primary-hover: #163075;
+  --primary-soft: #eef2fb;
+  --secondary: #c4a35a;
+  --secondary-hover: #b08f48;
+  --secondary-light: #f0f3f8;
+  --accent: #c9a84c;
+  --accent-hover: #b8973f;
+  --muted: #64748b;
+  --muted-dark: #475569;
+  --cream: #fafbfd;
+  --border-soft: #e2e8f0;
+  --footer: #152448;
+  --glow-gold: rgba(201, 168, 76, 0.12);
+  --glow-blue: rgba(30, 58, 138, 0.06);
 }
 
 @theme inline {
@@ -101,10 +101,9 @@ video {
   top: 0;
   left: 0;
   z-index: 60;
-  height: 3px;
+  height: 2px;
   width: 0%;
   background: linear-gradient(90deg, var(--primary), var(--accent));
-  box-shadow: 0 0 12px var(--glow-gold);
   pointer-events: none;
 }
 
@@ -153,20 +152,19 @@ video {
 }
 
 .surface-white {
-  background:
-    radial-gradient(ellipse 70% 50% at 100% 0%, var(--glow-blue), transparent 55%),
-    var(--surface);
+  background: var(--surface);
 }
 
 .surface-soft {
-  background:
-    radial-gradient(ellipse 60% 45% at 0% 100%, var(--glow-gold), transparent 50%),
-    radial-gradient(ellipse 50% 40% at 100% 0%, var(--glow-blue), transparent 55%),
-    linear-gradient(180deg, var(--secondary-light) 0%, var(--background) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--secondary-light) 0%,
+    var(--background) 100%
+  );
 }
 
 .surface-navy {
-  background: linear-gradient(145deg, var(--footer) 0%, var(--primary) 100%);
+  background: var(--footer);
   color: #fff;
 }
 
@@ -206,9 +204,9 @@ video {
 
 .card {
   border-radius: 1rem;
-  border: 1px solid color-mix(in srgb, var(--primary) 9%, transparent);
+  border: 1px solid var(--border-soft);
   background: var(--surface);
-  box-shadow: 0 2px 12px rgba(15, 35, 72, 0.04);
+  box-shadow: 0 1px 2px rgba(26, 39, 68, 0.04);
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s ease,
@@ -216,16 +214,16 @@ video {
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(15, 35, 72, 0.1);
-  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 39, 68, 0.08);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border-soft));
 }
 
 .card.bg-footer:hover,
 .card.bg-primary:hover {
   transform: none;
-  box-shadow: 0 2px 12px rgba(15, 35, 72, 0.04);
-  border-color: color-mix(in srgb, var(--primary) 9%, transparent);
+  box-shadow: none;
+  border-color: transparent;
 }
 
 @media (min-width: 640px) {
@@ -257,14 +255,14 @@ video {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, #2549a8 100%);
+  background: var(--primary);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(26, 58, 143, 0.28);
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.22);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
-  box-shadow: 0 10px 28px rgba(26, 58, 143, 0.35);
+  background: var(--primary-hover);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.28);
 }
 
 .btn-secondary {
@@ -302,13 +300,13 @@ video {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+  background: var(--accent);
   color: var(--footer);
-  box-shadow: 0 6px 18px rgba(201, 165, 90, 0.35);
+  box-shadow: 0 4px 14px rgba(201, 168, 76, 0.28);
 }
 
 .btn-gold:hover {
-  background: linear-gradient(135deg, var(--accent-hover) 0%, var(--secondary-hover) 100%);
+  background: var(--accent-hover);
 }
 
 /* —— Scroll reveals —— */
