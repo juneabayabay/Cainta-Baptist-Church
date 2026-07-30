@@ -2,7 +2,7 @@ import { Mail, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
-import { phoneLabel, phoneLinkProps } from "@/lib/contact";
+import { phoneLinkProps } from "@/lib/contact";
 import { site } from "@/lib/site";
 
 const hasFormKey =
@@ -10,6 +10,7 @@ const hasFormKey =
 
 export function Contact() {
   const phone = phoneLinkProps();
+  const showPhone = !site.phoneIsPlaceholder;
 
   return (
     <section id="contact" className="section-shell surface-soft">
@@ -52,21 +53,29 @@ export function Contact() {
 
               <div className="card px-5 py-5 sm:px-6">
                 <ul className="space-y-3 text-sm">
-                  <li>
-                    <a
-                      {...phone}
-                      className="inline-flex items-center gap-2 font-medium hover:text-primary"
-                    >
-                      <MessageCircle className="h-4 w-4 text-primary" aria-hidden />
-                      {phoneLabel()}
-                    </a>
-                  </li>
+                  {showPhone ? (
+                    <li>
+                      <a
+                        {...phone}
+                        className="inline-flex items-center gap-2 font-medium hover:text-primary"
+                      >
+                        <MessageCircle
+                          className="h-4 w-4 text-primary"
+                          aria-hidden
+                        />
+                        {site.phoneDisplay}
+                      </a>
+                    </li>
+                  ) : null}
                   <li>
                     <a
                       href={`mailto:${site.email}`}
                       className="inline-flex items-center gap-2 break-all font-medium hover:text-primary"
                     >
-                      <Mail className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                      <Mail
+                        className="h-4 w-4 shrink-0 text-primary"
+                        aria-hidden
+                      />
                       {site.email}
                     </a>
                   </li>

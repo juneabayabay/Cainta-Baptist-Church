@@ -27,7 +27,7 @@ export function Testimonials() {
 
         <div className="grid items-stretch gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:gap-5">
           <Reveal variant="left">
-            <div className="card relative min-h-[260px] overflow-hidden p-0 sm:min-h-[320px]">
+            <div className="card relative min-h-[220px] overflow-hidden p-0 sm:min-h-[300px]">
               <Image
                 src="/community-joy.jpg"
                 alt="Church family sharing joy after worship"
@@ -36,10 +36,6 @@ export function Testimonials() {
                 className="object-cover"
                 quality={85}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,35,72,0.75)] via-[rgba(15,35,72,0.15)] to-transparent" />
-              <p className="absolute right-0 bottom-0 left-0 p-5 text-sm font-medium text-white sm:p-6 sm:text-base">
-                Real people. Real hope. A place to belong in Jesus.
-              </p>
             </div>
           </Reveal>
 
@@ -69,10 +65,10 @@ export function Testimonials() {
                     className="h-4 w-4 shrink-0 fill-accent text-accent"
                     aria-hidden
                   />
-                  {site.reviews.count}+ {site.reviews.label}
+                  Read Facebook reviews
                 </span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent">
-                  Read
+                  Open
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden />
                 </span>
               </a>

@@ -63,12 +63,6 @@ video {
   height: auto;
 }
 
-@media (max-width: 380px) {
-  html {
-    font-size: 15px;
-  }
-}
-
 ::selection {
   background: color-mix(in srgb, var(--accent) 35%, transparent);
 }

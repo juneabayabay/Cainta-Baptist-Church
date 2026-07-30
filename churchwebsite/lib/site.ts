@@ -8,7 +8,7 @@ export const site = {
     "Cainta Baptist Church — a place of hope, rest, and belonging in Cainta, Rizal.",
   heroMeta: "Cainta, Rizal · Sundays from 9:00 AM",
   servingAreas: "Cainta, Pasig, Taytay, Antipolo",
-  language: "English services. Tagalog welcome.",
+  language: "English services · Tagalog welcome",
   verse: {
     text: "Come to me, all who are weary and burdened, and I will give you rest.",
     reference: "Matthew 11:28",
@@ -32,7 +32,7 @@ export const site = {
     line1: "157 Marick Drive, Subdivision",
     line2: "Cainta, Rizal 1900, Philippines",
     full: "157 Marick Drive, Subdivision, Cainta, Rizal 1900, Philippines",
-    landmark: "Inside Marick Drive Subdivision, Cainta.",
+    landmark: "Street parking nearby.",
     parking: "Street parking nearby.",
     mapsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
@@ -44,7 +44,7 @@ export const site = {
       "https://maps.google.com/maps?q=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines&z=17&output=embed",
   },
   visit: {
-    headline: "We saved a seat for you this Sunday.",
+    headline: "We saved a seat for you",
   },
   beliefs: [
     {
@@ -53,7 +53,7 @@ export const site = {
     },
     {
       title: "Grace",
-      text: "You do not have to be perfect — come as you are.",
+      text: "Salvation is a gift — not something you earn.",
     },
     {
       title: "The Bible",
@@ -71,7 +71,8 @@ export const site = {
     },
     {
       question: "What time should I arrive?",
-      answer: "Small group 9:00–10:00 AM. Worship 10:00–11:30 AM.",
+      answer:
+        "Come by 9:00 AM for Small Group, or by 10:00 AM for Worship. See Visit for the full schedule.",
     },
     {
       question: "Is there parking?",
@@ -79,7 +80,7 @@ export const site = {
     },
     {
       question: "Are children welcome?",
-      answer: "Always. Your whole family belongs here.",
+      answer: "Always. Your whole family is welcome.",
     },
     {
       question: "What if I'm not Baptist?",
@@ -119,11 +120,6 @@ export const site = {
   },
   vision: "A home in Cainta where tired hearts find Jesus and fresh hope.",
   mission: "To welcome, love, and walk with people toward Christ.",
-  story: {
-    title: "Our story",
-    body: "",
-    placeholder: "",
-  },
   social: {
     facebook: "https://www.facebook.com/CaintaBaptistChurch",
     facebookName: "Cainta Baptist Church",
@@ -184,7 +180,6 @@ export const site = {
       account: "XXXX-XXXX-XXXX",
       name: "Cainta Baptist Church",
     },
-    onlineForm: "https://forms.gle/example",
   },
   services: [
     {
@@ -199,12 +194,12 @@ export const site = {
     },
     {
       title: "Prayer & Bible Study",
-      time: "Wednesday · 6:30 PM",
+      time: "Wednesday · 6:30–8:30 PM",
       description: "Grow midweek with prayer and Scripture.",
     },
     {
       title: "Community Outreach",
-      time: "As scheduled",
+      time: "Announced on Facebook",
       description: "Love and serve our neighbors in Cainta.",
     },
   ],

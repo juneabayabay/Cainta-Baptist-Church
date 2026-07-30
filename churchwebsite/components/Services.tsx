@@ -1,4 +1,4 @@
-import { HandHelping, Sun } from "lucide-react";
+import { ExternalLink, HandHelping, Sun } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
@@ -25,9 +25,11 @@ export function Services() {
         <div className="grid gap-4 sm:grid-cols-2">
           {weekly.map((service, i) => {
             const Icon = icons[i] ?? Sun;
+            const isOutreach = service.title === "Community Outreach";
+
             return (
               <Reveal key={service.title} delayMs={i * 80} variant="scale">
-                <article className="card h-full px-5 py-5 sm:px-6">
+                <article className="card flex h-full flex-col px-5 py-5 sm:px-6">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-soft text-primary">
                     <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                   </div>
@@ -37,7 +39,20 @@ export function Services() {
                   <p className="mb-2 text-sm font-semibold text-accent">
                     {service.time}
                   </p>
-                  <p className="text-sm text-muted">{service.description}</p>
+                  <p className="mb-4 flex-1 text-sm text-muted">
+                    {service.description}
+                  </p>
+                  {isOutreach ? (
+                    <a
+                      href={site.social.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                    >
+                      See updates on Facebook
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                    </a>
+                  ) : null}
                 </article>
               </Reveal>
             );

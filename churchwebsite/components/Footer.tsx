@@ -14,7 +14,7 @@ const links = [
 export function Footer() {
   return (
     <footer
-      className="bg-footer pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white/70 lg:pb-0"
+      className="bg-footer pb-[calc(5.25rem+env(safe-area-inset-bottom))] text-white/70 lg:pb-0"
       role="contentinfo"
     >
       <div className="mx-auto max-w-[1080px] px-4 py-8 sm:px-6 lg:px-8">

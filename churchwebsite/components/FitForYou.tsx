@@ -21,7 +21,6 @@ export function FitForYou() {
                 <span className="text-accent">holds you</span>
               </>
             }
-            description="Simple truths that change everything — especially when life feels heavy."
           />
         </Reveal>
 

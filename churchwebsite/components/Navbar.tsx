@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "#visit", label: "Visit" },
   { href: "#new-here", label: "New Here" },
+  { href: "#visit", label: "Visit" },
   { href: "#about", label: "About" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
@@ -13,9 +13,8 @@ const links = [
 
 const sectionIds = [
   "home",
-  "visit",
   "new-here",
-  "fit",
+  "visit",
   "about",
   "faq",
   "contact",
@@ -43,7 +42,6 @@ export function Navbar() {
         ([entry]) => {
           if (!entry.isIntersecting) return;
           if (id === "home") setActive("");
-          else if (id === "fit") setActive("#about");
           else setActive(`#${id}`);
         },
         { rootMargin: "-40% 0px -50% 0px", threshold: 0 },

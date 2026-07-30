@@ -13,9 +13,9 @@ import { Verse } from "@/components/Verse";
 import { Visit } from "@/components/Visit";
 
 /**
- * Final visitor journey:
- * Welcome → Scripture → First Sunday → Visit → Invitation to Jesus
- * → Beliefs → About → Photos → Stories → Life → FAQ → Give → Contact
+ * Visitor journey (one job per section):
+ * Welcome → Scripture → First Sunday → Visit (canonical times)
+ * → Invitation → Beliefs → About → Photos → Stories → Life → FAQ → Give → Contact
  */
 export default function Home() {
   return (

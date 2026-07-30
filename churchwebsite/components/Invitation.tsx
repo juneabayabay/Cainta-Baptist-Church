@@ -35,18 +35,21 @@ export function Invitation() {
               <span className="text-accent">come to Him</span>
             </h2>
             <p className="mx-auto mb-8 max-w-lg text-[0.95rem] leading-relaxed text-white/80 sm:text-base">
-              God has not forgotten you. Take one step this Sunday. We will meet
-              you with kindness, prayer, and the hope found in Christ.
+              God has not forgotten you. In Christ there is forgiveness, rest,
+              and a new beginning.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="#visit" className="btn btn-gold w-full max-w-xs sm:w-auto">
-                I will come this Sunday
-              </a>
               <a
                 href="#contact"
-                className="btn btn-ghost-light w-full max-w-xs sm:w-auto"
+                className="btn btn-gold w-full max-w-xs sm:w-auto"
               >
                 I need prayer
+              </a>
+              <a
+                href="#visit"
+                className="btn btn-ghost-light w-full max-w-xs sm:w-auto"
+              >
+                See Sunday times
               </a>
             </div>
           </Reveal>

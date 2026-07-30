@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
@@ -70,43 +69,22 @@ export function About() {
           </Reveal>
         </div>
 
-        <div className="grid items-stretch gap-4 lg:grid-cols-2 lg:gap-5">
-          <Reveal variant="left">
-            <figure className="card flex h-full flex-col bg-footer px-6 py-7 text-white sm:px-8">
-              <PastorAvatar />
-              <figcaption>
-                <p className="font-serif text-xl font-semibold">
-                  {site.pastor.name}
-                </p>
-                <p className="mt-1 text-sm font-medium tracking-wide text-accent uppercase">
-                  {site.pastor.title}
-                </p>
-              </figcaption>
-              <blockquote className="mt-5 border-t border-white/15 pt-5 text-[0.95rem] leading-relaxed text-white/80 italic">
-                &ldquo;{site.pastor.quote}&rdquo;
-              </blockquote>
-            </figure>
-          </Reveal>
-
-          <Reveal variant="right" delayMs={80}>
-            <div className="flex h-full flex-col justify-center rounded-2xl bg-primary-soft/60 px-6 py-8 text-center lg:px-8 lg:text-left">
-              <h3 className="mb-3 font-serif text-xl font-semibold sm:text-2xl">
-                Your next step can start this Sunday
-              </h3>
-              <p className="mb-6 text-[0.95rem] text-muted-dark">
-                You do not need a perfect past — only a willing heart. We will
-                be glad you came.
+        <Reveal variant="scale">
+          <figure className="card mx-auto flex max-w-2xl flex-col bg-footer px-6 py-7 text-white sm:px-8 sm:py-8">
+            <PastorAvatar />
+            <figcaption>
+              <p className="font-serif text-xl font-semibold">
+                {site.pastor.name}
               </p>
-              <a
-                href="#visit"
-                className="btn btn-primary mx-auto w-full max-w-xs lg:mx-0 lg:w-auto"
-              >
-                Plan your visit
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </a>
-            </div>
-          </Reveal>
-        </div>
+              <p className="mt-1 text-sm font-medium tracking-wide text-accent uppercase">
+                {site.pastor.title}
+              </p>
+            </figcaption>
+            <blockquote className="mt-5 border-t border-white/15 pt-5 text-[0.95rem] leading-relaxed text-white/80 italic">
+              &ldquo;{site.pastor.quote}&rdquo;
+            </blockquote>
+          </figure>
+        </Reveal>
       </div>
     </section>
   );

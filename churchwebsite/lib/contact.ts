@@ -6,7 +6,7 @@ export function phoneHref() {
 }
 
 export function phoneLabel() {
-  return site.phoneIsPlaceholder ? "Message us" : site.phoneDisplay;
+  return site.phoneIsPlaceholder ? "Ask on Messenger" : site.phoneDisplay;
 }
 
 export function phoneLinkProps() {

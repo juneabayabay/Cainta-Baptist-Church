@@ -124,7 +124,11 @@ export function ContactForm() {
           className="btn btn-primary w-full text-sm disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
         >
           <Send className="h-4 w-4" aria-hidden />
-          {status === "sending" ? "Sending…" : "Send message"}
+          {status === "sending"
+            ? "Sending…"
+            : accessKey
+              ? "Send message"
+              : "Continue in Messenger"}
         </button>
 
         {status === "sent" ? (

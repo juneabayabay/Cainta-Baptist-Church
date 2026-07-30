@@ -19,6 +19,7 @@ export function Visit() {
                 <span className="text-accent">for you</span>
               </>
             }
+            description={site.language}
           />
         </Reveal>
 
@@ -28,22 +29,22 @@ export function Visit() {
               <div className="border-b border-[color:var(--foreground)]/6 bg-primary-soft/60 px-5 py-4 sm:px-6">
                 <h3 className="flex items-center gap-2 font-serif text-lg font-semibold">
                   <Clock className="h-5 w-5 text-primary" aria-hidden />
-                  Sunday
+                  Sunday schedule
                 </h3>
               </div>
               <ul className="divide-y divide-[color:var(--foreground)]/6">
                 {site.services.slice(0, 2).map((service) => (
                   <li
                     key={service.title}
-                    className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6"
+                    className="flex flex-col gap-2 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6"
                   >
                     <div className="min-w-0">
                       <p className="font-semibold text-foreground">
-                        {service.title}
+                        {service.title.replace("Sunday ", "")}
                       </p>
                       <p className="text-sm text-muted">{service.description}</p>
                     </div>
-                    <p className="shrink-0 rounded-full bg-accent/20 px-3 py-1 text-sm font-semibold text-primary">
+                    <p className="shrink-0 self-start rounded-full bg-accent/20 px-3 py-1.5 text-sm font-semibold whitespace-nowrap text-primary sm:self-auto">
                       {service.time.replace("Sunday · ", "")}
                     </p>
                   </li>
@@ -58,11 +59,11 @@ export function Visit() {
                 <MapPin className="h-5 w-5 text-accent" aria-hidden />
                 Location
               </h3>
-              <address className="mb-3 not-italic">
+              <address className="mb-2 not-italic">
                 <p className="font-medium">{site.address.line1}</p>
                 <p className="mt-1 text-sm text-white/65">{site.address.line2}</p>
               </address>
-              <p className="mb-5 text-sm text-white/55">{site.address.landmark}</p>
+              <p className="mb-5 text-sm text-white/55">{site.address.parking}</p>
               <div className="mt-auto grid gap-2.5 sm:grid-cols-2">
                 <a
                   href={site.address.mapsUrl}
@@ -96,7 +97,7 @@ export function Visit() {
           <div className="card mt-4 overflow-hidden p-0 sm:mt-5">
             <div className="flex flex-col gap-3 border-b border-[color:var(--foreground)]/6 bg-primary-soft/40 px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
               <p className="text-sm font-medium text-foreground">
-                {site.address.full}
+                Find us on the map
               </p>
               <a
                 href={site.address.mapsSearchUrl}
@@ -104,11 +105,11 @@ export function Visit() {
                 rel="noopener noreferrer"
                 className="btn btn-secondary shrink-0 px-4 py-2 text-xs"
               >
-                Google Maps
+                Open Google Maps
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden />
               </a>
             </div>
-            <div className="relative aspect-[4/3] w-full sm:aspect-[21/9] lg:aspect-[2.4/1]">
+            <div className="relative aspect-[16/10] w-full sm:aspect-[21/9] lg:aspect-[2.4/1]">
               <iframe
                 title={`Map showing ${site.name}`}
                 src={site.address.mapsEmbedUrl}

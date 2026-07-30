@@ -18,24 +18,24 @@ export function MobileActionBar() {
           href={site.address.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1.5 py-2.5 text-[0.72rem] leading-none font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
+          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1 py-2.5 text-xs leading-tight font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
         >
           <MapPin className="h-5 w-5 text-primary" aria-hidden />
           Directions
         </a>
         <a
           {...phone}
-          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1.5 py-2.5 text-[0.72rem] leading-none font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
+          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1 py-2.5 text-xs leading-tight font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
         >
           <MessageCircle className="h-5 w-5 text-primary" aria-hidden />
           Message
         </a>
         <a
-          href="#new-here"
-          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl bg-primary px-1.5 py-2.5 text-[0.72rem] leading-none font-semibold text-white shadow-sm transition active:scale-[0.97] active:bg-primary-hover"
+          href="#visit"
+          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl bg-primary px-1 py-2.5 text-xs leading-tight font-semibold text-white shadow-sm transition active:scale-[0.97] active:bg-primary-hover"
         >
           <HeartHandshake className="h-5 w-5" aria-hidden />
-          Need hope
+          Visit
         </a>
       </div>
     </div>
