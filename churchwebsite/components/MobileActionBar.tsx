@@ -9,33 +9,33 @@ export function MobileActionBar() {
 
   return (
     <div
-      className="fixed right-0 bottom-0 left-0 z-40 border-t border-[color:var(--foreground)]/8 bg-background/96 px-3 py-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom,0px))] backdrop-blur-md lg:hidden"
+      className="fixed right-0 bottom-0 left-0 z-40 border-t border-[color:var(--foreground)]/8 bg-background/98 px-3 pt-2.5 pb-[calc(0.65rem+env(safe-area-inset-bottom,0px))] shadow-[0_-6px_24px_rgba(21,36,72,0.08)] backdrop-blur-md lg:hidden"
       role="navigation"
       aria-label="Quick actions"
     >
-      <div className="mx-auto flex max-w-lg items-stretch gap-2">
+      <div className="mx-auto grid max-w-lg grid-cols-3 gap-2">
         <a
           href={site.address.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-2 text-[0.7rem] font-semibold text-foreground transition hover:bg-secondary-light"
+          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1.5 py-2.5 text-[0.72rem] leading-none font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
         >
-          <MapPin className="h-4 w-4 text-primary" aria-hidden />
+          <MapPin className="h-5 w-5 text-primary" aria-hidden />
           Directions
         </a>
         <a
           {...phone}
-          className="flex flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-2 text-[0.7rem] font-semibold text-foreground transition hover:bg-secondary-light"
+          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1.5 py-2.5 text-[0.72rem] leading-none font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
         >
-          <MessageCircle className="h-4 w-4 text-primary" aria-hidden />
+          <MessageCircle className="h-5 w-5 text-primary" aria-hidden />
           Message
         </a>
         <a
           href="#new-here"
-          className="flex flex-[1.15] flex-col items-center justify-center gap-0.5 rounded-xl bg-primary px-2 py-2 text-[0.7rem] font-semibold text-white transition hover:bg-primary-hover"
+          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl bg-primary px-1.5 py-2.5 text-[0.72rem] leading-none font-semibold text-white shadow-sm transition active:scale-[0.97] active:bg-primary-hover"
         >
-          <HeartHandshake className="h-4 w-4" aria-hidden />
-          I need hope
+          <HeartHandshake className="h-5 w-5" aria-hidden />
+          Need hope
         </a>
       </div>
     </div>
