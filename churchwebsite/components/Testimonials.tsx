@@ -41,10 +41,10 @@ export function Testimonials() {
         </div>
 
         <Reveal delayMs={80}>
-          <div className="card flex flex-col items-center gap-4 bg-foreground px-5 py-6 text-center text-white sm:flex-row sm:justify-between sm:px-7 sm:py-6 sm:text-left">
+          <div className="card flex flex-col items-center gap-4 bg-primary px-5 py-6 text-center text-white sm:flex-row sm:justify-between sm:px-7 sm:py-6 sm:text-left">
             <div className="flex items-start gap-3">
               <Star
-                className="mt-0.5 h-5 w-5 shrink-0 fill-primary text-primary"
+                className="mt-0.5 h-5 w-5 shrink-0 fill-accent text-accent"
                 aria-hidden
               />
               <div>
@@ -60,7 +60,7 @@ export function Testimonials() {
               href={site.reviews.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary shrink-0 text-sm"
+              className="btn btn-gold shrink-0 text-sm"
             >
               Read reviews
               <ExternalLink className="h-3.5 w-3.5" aria-hidden />

@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Hope & Light */
-  --background: #fff9f0;
+  /* Holy & Elegant */
+  --background: #f0f1f4;
   --surface: #ffffff;
-  --foreground: #2c3e50;
-  --primary: #f4c542;
-  --primary-hover: #e5b530;
-  --secondary: #f7b267;
-  --secondary-hover: #e9a055;
-  --secondary-light: #fff3e6;
-  --accent: #f7b267;
-  --accent-hover: #e9a055;
-  --muted: #5d6d7e;
-  --muted-dark: #34495e;
-  --cream: #fff9f0;
-  --border-soft: #ebe4d8;
-  --footer: #2c3e50;
+  --foreground: #1a2f54;
+  --primary: #1e3a8a;
+  --primary-hover: #152e6e;
+  --secondary: #c9a962;
+  --secondary-hover: #b8944f;
+  --secondary-light: #eceef2;
+  --accent: #c9a962;
+  --accent-hover: #b8944f;
+  --muted: #64748b;
+  --muted-dark: #475569;
+  --cream: #f8f9fb;
+  --border-soft: #dde1e8;
+  --footer: #1e3a8a;
 }
 
 @theme inline {
@@ -66,11 +66,11 @@ video {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--primary) 35%, transparent);
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 :focus-visible {
-  outline: 2px solid var(--secondary);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -80,7 +80,7 @@ video {
   top: -100%;
   z-index: 100;
   border-radius: 999px;
-  background: var(--foreground);
+  background: var(--primary);
   color: #fff;
   padding: 0.65rem 1.1rem;
   font-size: 0.9rem;
@@ -147,7 +147,7 @@ video {
 }
 
 .surface-navy {
-  background: var(--foreground);
+  background: var(--primary);
   color: #fff;
 }
 
@@ -159,7 +159,7 @@ video {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--foreground);
+  color: var(--primary);
 }
 
 .section-eyebrow::before {
@@ -167,7 +167,7 @@ video {
   display: block;
   width: 1.25rem;
   height: 2px;
-  background: var(--primary);
+  background: var(--accent);
   border-radius: 1px;
 }
 
@@ -186,9 +186,9 @@ video {
 
 .card {
   border-radius: 1rem;
-  border: 1px solid color-mix(in srgb, var(--foreground) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 10%, transparent);
   background: var(--surface);
-  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.06);
+  box-shadow: 0 1px 4px rgba(30, 58, 138, 0.05);
 }
 
 @media (min-width: 640px) {
@@ -220,7 +220,7 @@ video {
 
 .btn-primary {
   background: var(--primary);
-  color: var(--foreground);
+  color: #fff;
 }
 
 .btn-primary:hover {
@@ -228,46 +228,46 @@ video {
 }
 
 .btn-secondary {
-  border: 1px solid color-mix(in srgb, var(--foreground) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
   background: var(--surface);
   color: var(--foreground);
 }
 
 .btn-secondary:hover {
-  border-color: var(--foreground);
-  background: var(--foreground);
+  border-color: var(--primary);
+  background: var(--primary);
   color: #fff;
 }
 
 .btn-ghost-light {
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   backdrop-filter: blur(8px);
 }
 
 .btn-ghost-light:hover {
   background: #fff;
-  color: var(--foreground);
+  color: var(--primary);
 }
 
 .btn-white {
   background: #fff;
-  color: var(--foreground);
-  box-shadow: 0 4px 20px rgba(44, 62, 80, 0.12);
+  color: var(--primary);
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.1);
 }
 
 .btn-white:hover {
   background: var(--cream);
 }
 
-.btn-navy {
-  background: var(--foreground);
-  color: #fff;
+.btn-gold {
+  background: var(--accent);
+  color: var(--foreground);
 }
 
-.btn-navy:hover {
-  background: var(--muted-dark);
+.btn-gold:hover {
+  background: var(--accent-hover);
 }
 
 .reveal {

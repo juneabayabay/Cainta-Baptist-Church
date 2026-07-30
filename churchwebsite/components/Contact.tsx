@@ -17,7 +17,7 @@ export function Contact() {
             title={
               <>
                 We&apos;d love to{" "}
-                <span className="text-secondary">hear from you</span>
+                <span className="text-accent">hear from you</span>
               </>
             }
             description="Prayer requests, questions about visiting, or just saying hello — reach out anytime."
@@ -27,8 +27,8 @@ export function Contact() {
         <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal>
             <div className="space-y-5">
-              <div className="card flex h-full flex-col justify-center bg-foreground px-5 py-7 text-white sm:px-7 sm:py-8">
-                <p className="section-eyebrow mb-3 text-white/50 before:bg-primary">
+              <div className="card flex h-full flex-col justify-center bg-primary px-5 py-7 text-white sm:px-7 sm:py-8">
+                <p className="section-eyebrow mb-3 text-white/55 before:bg-accent">
                   Fastest reply
                 </p>
                 <h3 className="mb-3 font-serif text-xl font-semibold">
@@ -42,7 +42,7 @@ export function Contact() {
                   href={site.social.messenger}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-primary text-sm"
+                  className="btn btn-gold text-sm"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden />
                   Message us on Messenger
@@ -57,9 +57,9 @@ export function Contact() {
                   <li>
                     <a
                       href={`tel:${site.phone}`}
-                      className="inline-flex items-center gap-2 font-medium text-foreground hover:text-secondary"
+                      className="inline-flex items-center gap-2 font-medium text-foreground hover:text-primary"
                     >
-                      <Phone className="h-4 w-4 text-secondary" aria-hidden />
+                      <Phone className="h-4 w-4 text-primary" aria-hidden />
                       {site.phoneIsPlaceholder
                         ? "Phone — update in site settings"
                         : site.phoneDisplay}
@@ -68,9 +68,9 @@ export function Contact() {
                   <li>
                     <a
                       href={`mailto:${site.email}`}
-                      className="inline-flex items-center gap-2 font-medium text-foreground hover:text-secondary"
+                      className="inline-flex items-center gap-2 font-medium text-foreground hover:text-primary"
                     >
-                      <Mail className="h-4 w-4 text-secondary" aria-hidden />
+                      <Mail className="h-4 w-4 text-primary" aria-hidden />
                       {site.email}
                     </a>
                   </li>
@@ -79,10 +79,10 @@ export function Contact() {
                       href={site.social.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-medium text-foreground hover:text-secondary"
+                      className="inline-flex items-center gap-2 font-medium text-foreground hover:text-primary"
                     >
                       <MessageCircle
-                        className="h-4 w-4 text-secondary"
+                        className="h-4 w-4 text-primary"
                         aria-hidden
                       />
                       Facebook Page

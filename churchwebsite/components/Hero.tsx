@@ -10,44 +10,45 @@ export function Hero() {
     >
       <div className="absolute inset-0" aria-hidden>
         <Image
-          src="/hero-hope-light-4k.jpg"
+          src="/hero-sunrise-cross.jpg"
           alt=""
           fill
           priority
           quality={95}
           sizes="100vw"
-          className="object-cover hero-kenburns scale-105"
+          className="object-cover object-[center_40%] hero-kenburns scale-105"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(44,62,80,0.82)_0%,rgba(44,62,80,0.48)_50%,rgba(247,178,103,0.22)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(44,62,80,0.38)_0%,transparent_38%,rgba(44,62,80,0.58)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_15%,rgba(244,197,66,0.2),transparent_55%)]" />
+        {/* Left-weighted overlay — keeps sunrise & cross visible, text readable */}
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(26,47,84,0.82)_0%,rgba(30,58,138,0.45)_42%,rgba(30,58,138,0.12)_72%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,47,84,0.25)_0%,transparent_35%,rgba(26,47,84,0.55)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_25%,rgba(201,169,98,0.12),transparent_55%)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1080px] px-4 pt-28 pb-20 sm:px-6 sm:pt-32 sm:pb-24 lg:px-8">
         <div className="max-w-2xl">
-          <p className="hero-enter mb-3 text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+          <p className="hero-enter mb-3 text-xs font-semibold tracking-[0.14em] text-accent uppercase">
             {site.name}
           </p>
 
           <h1 className="hero-enter hero-enter-delay-1 mb-4 font-serif text-[clamp(2rem,6vw,3.25rem)] leading-[1.1] font-semibold text-white">
             Hope begins
-            <span className="mt-2 block text-[0.88em] font-medium text-primary">
+            <span className="mt-2 block text-[0.88em] font-medium text-accent">
               with a fresh start in Christ.
             </span>
           </h1>
 
           <p className="hero-enter hero-enter-delay-2 mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-semibold text-white sm:text-base">
             <span className="inline-flex items-center gap-1.5">
-              <MapPin className="h-4 w-4 text-primary" aria-hidden />
+              <MapPin className="h-4 w-4 text-accent" aria-hidden />
               {site.heroMeta}
             </span>
           </p>
 
-          <p className="hero-enter hero-enter-delay-2 mb-2 text-[0.9rem] leading-relaxed text-white/85 sm:text-base">
+          <p className="hero-enter hero-enter-delay-2 mb-2 text-[0.9rem] leading-relaxed text-white/90 sm:text-base">
             {site.description}
           </p>
 
-          <p className="hero-enter hero-enter-delay-2 mb-8 text-sm text-white/70">
+          <p className="hero-enter hero-enter-delay-2 mb-8 text-sm text-white/75">
             {site.servingAreas}
           </p>
 

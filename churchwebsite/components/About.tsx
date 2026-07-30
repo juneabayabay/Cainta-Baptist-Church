@@ -27,7 +27,7 @@ function PastorAvatar() {
 
   return (
     <div
-      className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary/25 font-serif text-2xl font-semibold text-primary sm:h-24 sm:w-24"
+      className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-accent/20 font-serif text-2xl font-semibold text-accent sm:h-24 sm:w-24"
       aria-hidden
     >
       {initials}
@@ -48,7 +48,7 @@ export function About() {
             title={
               <>
                 A church rooted in hope —{" "}
-                <span className="text-secondary">built on love</span>
+                <span className="text-accent">built on love</span>
               </>
             }
             description="In Cainta, we worship together, grow in God's Word, and encourage one another through every season."
@@ -96,13 +96,13 @@ export function About() {
 
         <div className="grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
           <Reveal>
-            <figure className="card flex h-full flex-col bg-foreground px-6 py-8 text-white sm:px-8 sm:py-9">
+            <figure className="card flex h-full flex-col bg-primary px-6 py-8 text-white sm:px-8 sm:py-9">
               <PastorAvatar />
               <figcaption>
                 <p className="font-serif text-xl font-semibold sm:text-2xl">
                   {site.pastor.name}
                 </p>
-                <p className="mt-1 text-sm font-medium tracking-wide text-primary uppercase">
+                <p className="mt-1 text-sm font-medium tracking-wide text-accent uppercase">
                   {site.pastor.title}
                 </p>
               </figcaption>

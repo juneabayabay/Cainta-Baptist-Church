@@ -17,19 +17,19 @@ export function MobileActionBar() {
           rel="noopener noreferrer"
           className="flex flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-2 text-[0.7rem] font-semibold text-foreground transition hover:bg-secondary-light"
         >
-          <MapPin className="h-4 w-4 text-secondary" aria-hidden />
+          <MapPin className="h-4 w-4 text-primary" aria-hidden />
           Directions
         </a>
         <a
           href={`tel:${site.phone}`}
           className="flex flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-2 text-[0.7rem] font-semibold text-foreground transition hover:bg-secondary-light"
         >
-          <Phone className="h-4 w-4 text-secondary" aria-hidden />
+          <Phone className="h-4 w-4 text-primary" aria-hidden />
           Call
         </a>
         <a
           href="#new-here"
-          className="flex flex-[1.15] flex-col items-center justify-center gap-0.5 rounded-xl bg-primary px-2 py-2 text-[0.7rem] font-semibold text-foreground transition hover:bg-primary-hover"
+          className="flex flex-[1.15] flex-col items-center justify-center gap-0.5 rounded-xl bg-primary px-2 py-2 text-[0.7rem] font-semibold text-white transition hover:bg-primary-hover"
         >
           <HeartHandshake className="h-4 w-4" aria-hidden />
           I&apos;m new

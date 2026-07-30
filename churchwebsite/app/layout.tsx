@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
     locale: "en_PH",
-    images: [{ url: "/hero-hope-light-4k.jpg", alt: site.name }],
+    images: [{ url: "/hero-sunrise-cross.jpg", alt: site.name }],
   },
   icons: {
     icon: "/logo.png",

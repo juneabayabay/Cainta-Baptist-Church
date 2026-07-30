@@ -16,7 +16,7 @@ export function Visit() {
             title={
               <>
                 Join us this{" "}
-                <span className="text-secondary">Sunday</span>
+                <span className="text-accent">Sunday</span>
               </>
             }
             description={site.visit.headline}
@@ -28,7 +28,7 @@ export function Visit() {
             <div className="card overflow-hidden">
               <div className="border-b border-[color:var(--foreground)]/6 bg-secondary-light/40 px-5 py-4 sm:px-6">
                 <h3 className="flex items-center gap-2 font-serif text-lg font-semibold">
-                  <Clock className="h-5 w-5 text-secondary" aria-hidden />
+                  <Clock className="h-5 w-5 text-primary" aria-hidden />
                   Sunday schedule
                 </h3>
               </div>
@@ -44,7 +44,7 @@ export function Visit() {
                       </p>
                       <p className="text-sm text-muted">{service.description}</p>
                     </div>
-                    <p className="shrink-0 rounded-full bg-primary/15 px-3 py-1 text-sm font-semibold text-foreground">
+                    <p className="shrink-0 rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-primary">
                       {service.time.replace("Sunday · ", "")}
                     </p>
                   </li>
@@ -58,9 +58,9 @@ export function Visit() {
           </Reveal>
 
           <Reveal delayMs={70}>
-            <div className="card flex h-full flex-col bg-foreground px-5 py-6 text-white sm:px-6 sm:py-7">
+            <div className="card flex h-full flex-col bg-primary px-5 py-6 text-white sm:px-6 sm:py-7">
               <h3 className="mb-4 flex items-center gap-2 font-serif text-lg font-semibold">
-                <MapPin className="h-5 w-5 text-primary" aria-hidden />
+                <MapPin className="h-5 w-5 text-accent" aria-hidden />
                 Our address
               </h3>
               <address className="mb-4 not-italic">
@@ -80,7 +80,7 @@ export function Visit() {
                   href={site.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-primary text-sm"
+                  className="btn btn-gold text-sm"
                 >
                   <Navigation className="h-4 w-4" aria-hidden />
                   Directions

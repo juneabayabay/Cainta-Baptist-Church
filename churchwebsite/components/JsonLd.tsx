@@ -11,7 +11,7 @@ export function JsonLd() {
     url: site.url,
     email: site.email,
     telephone: site.phone,
-    image: `${site.url}/hero-hope-light-4k.jpg`,
+    image: `${site.url}/hero-sunrise-cross.jpg`,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.line1,

@@ -38,7 +38,7 @@ export function Gallery() {
                     sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                     className="object-cover transition duration-500 group-hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(44,62,80,0.6)] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(30,58,138,0.65)] via-transparent to-transparent" />
                   <figcaption className="absolute right-0 bottom-0 left-0 p-4">
                     <p className="text-sm font-medium text-white">
                       {photo.caption}

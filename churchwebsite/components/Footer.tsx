@@ -15,7 +15,7 @@ const links = [
 export function Footer() {
   return (
     <footer
-      className="bg-foreground pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white/70 lg:pb-0"
+      className="bg-primary pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white/70 lg:pb-0"
       role="contentinfo"
     >
       <div className="mx-auto max-w-[1080px] px-4 py-8 sm:px-6 lg:px-8">
@@ -23,7 +23,7 @@ export function Footer() {
           <div>
             <a
               href="#home"
-              className="font-serif text-base font-semibold text-white hover:text-primary"
+              className="font-serif text-base font-semibold text-white hover:text-accent"
             >
               {site.name}
             </a>
@@ -37,7 +37,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-xs transition hover:text-primary"
+                    className="text-xs transition hover:text-accent"
                   >
                     {link.label}
                   </a>
@@ -52,14 +52,14 @@ export function Footer() {
               aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-primary"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-accent"
             >
               <FacebookIcon className="h-4 w-4" aria-hidden />
             </a>
             <a
               href={`mailto:${site.email}`}
               aria-label="Email"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-primary"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-accent"
             >
               <Mail className="h-4 w-4" aria-hidden />
             </a>
