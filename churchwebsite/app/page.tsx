@@ -12,7 +12,11 @@ import { Testimonials } from "@/components/Testimonials";
 import { Verse } from "@/components/Verse";
 import { Visit } from "@/components/Visit";
 
-/** Heart first → practical → belonging → respond */
+/**
+ * Final visitor journey:
+ * Welcome → Scripture → First Sunday → Visit → Invitation to Jesus
+ * → Beliefs → About → Photos → Stories → Life → FAQ → Give → Contact
+ */
 export default function Home() {
   return (
     <main id="main" className="main-with-mobile-bar overflow-x-hidden">

@@ -15,8 +15,8 @@ export function Services() {
             eyebrow="Beyond Sunday"
             title={
               <>
-                Grow{" "}
-                <span className="text-accent">together</span>
+                Grow closer to{" "}
+                <span className="text-accent">Jesus</span>
               </>
             }
           />

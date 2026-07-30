@@ -19,7 +19,6 @@ export function Visit() {
                 <span className="text-accent">for you</span>
               </>
             }
-            description={site.visit.headline}
           />
         </Reveal>
 

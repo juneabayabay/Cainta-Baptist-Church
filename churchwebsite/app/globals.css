@@ -242,6 +242,7 @@ video {
   padding: 0.625rem 1.5rem;
   font-size: 0.9375rem;
   font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
   transition:
     transform 0.25s ease,
     background 0.25s ease,

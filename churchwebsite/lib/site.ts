@@ -134,6 +134,11 @@ export const site = {
   },
   gallery: [
     {
+      src: "/community-joy.jpg",
+      alt: "Church family sharing joy after worship",
+      caption: "Joy",
+    },
+    {
       src: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1600&q=80",
       alt: "Worship together on Sunday",
       caption: "Worship",
@@ -157,11 +162,6 @@ export const site = {
       src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
       alt: "Music and praise during service",
       caption: "Hope",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
-      alt: "People laughing and feeling welcome",
-      caption: "Joy",
     },
   ],
   hours: {

@@ -53,8 +53,8 @@ export function Give() {
         <Reveal>
           <SectionHeader
             eyebrow="Give"
-            title="Partner with joy"
-            description="Your gift helps share hope in Cainta."
+            title="Give with a glad heart"
+            description="Your gift helps others meet Jesus in Cainta."
           />
         </Reveal>
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink, Star } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -7,7 +8,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="section-shell surface-white"
+      className="section-shell surface-soft"
       aria-labelledby="testimonials-heading"
     >
       <div className="section-inner">
@@ -24,38 +25,60 @@ export function Testimonials() {
           />
         </Reveal>
 
-        <div className="mb-6 grid gap-4 sm:grid-cols-2">
-          {site.testimonials.map((item, i) => (
-            <Reveal key={item.author} delayMs={i * 80} variant="scale">
-              <blockquote className="card h-full px-5 py-6 sm:px-7">
-                <p className="mb-4 font-serif text-lg leading-relaxed text-foreground italic">
-                  &ldquo;{item.quote}&rdquo;
-                </p>
-                <footer className="text-sm font-semibold text-muted">
-                  — {item.author}
-                </footer>
-              </blockquote>
-            </Reveal>
-          ))}
-        </div>
+        <div className="grid items-stretch gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:gap-5">
+          <Reveal variant="left">
+            <div className="card relative min-h-[260px] overflow-hidden p-0 sm:min-h-[320px]">
+              <Image
+                src="/community-joy.jpg"
+                alt="Church family sharing joy after worship"
+                fill
+                sizes="(max-width: 1023px) 100vw, 55vw"
+                className="object-cover"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,35,72,0.75)] via-[rgba(15,35,72,0.15)] to-transparent" />
+              <p className="absolute right-0 bottom-0 left-0 p-5 text-sm font-medium text-white sm:p-6 sm:text-base">
+                Real people. Real hope. A place to belong in Jesus.
+              </p>
+            </div>
+          </Reveal>
 
-        <Reveal delayMs={80}>
-          <a
-            href={site.reviews.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card flex flex-col items-center gap-3 bg-footer px-5 py-5 text-center text-white transition hover:-translate-y-0.5 sm:flex-row sm:justify-between sm:text-left"
-          >
-            <span className="flex items-center gap-2 font-medium">
-              <Star className="h-4 w-4 fill-accent text-accent" aria-hidden />
-              {site.reviews.count}+ {site.reviews.label}
-            </span>
-            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
-              Read reviews
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-            </span>
-          </a>
-        </Reveal>
+          <div className="flex flex-col gap-4">
+            {site.testimonials.map((item, i) => (
+              <Reveal key={item.author} delayMs={i * 80} variant="right">
+                <blockquote className="card h-full px-5 py-5 sm:px-6 sm:py-6">
+                  <p className="mb-3 font-serif text-[1.05rem] leading-relaxed text-foreground italic sm:text-lg">
+                    &ldquo;{item.quote}&rdquo;
+                  </p>
+                  <footer className="text-sm font-semibold text-muted">
+                    — {item.author}
+                  </footer>
+                </blockquote>
+              </Reveal>
+            ))}
+
+            <Reveal delayMs={120}>
+              <a
+                href={site.reviews.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card flex items-center justify-between gap-3 bg-footer px-5 py-4 text-white"
+              >
+                <span className="flex items-center gap-2 text-sm font-medium">
+                  <Star
+                    className="h-4 w-4 shrink-0 fill-accent text-accent"
+                    aria-hidden
+                  />
+                  {site.reviews.count}+ {site.reviews.label}
+                </span>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                  Read
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                </span>
+              </a>
+            </Reveal>
+          </div>
+        </div>
       </div>
     </section>
   );
