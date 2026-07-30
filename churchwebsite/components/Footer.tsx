@@ -3,18 +3,17 @@ import { FacebookIcon } from "@/components/SocialIcons";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "#visit", label: "Visit" },
   { href: "#new-here", label: "New Here" },
+  { href: "#visit", label: "Visit" },
   { href: "#about", label: "About" },
   { href: "#faq", label: "FAQ" },
-  { href: "#give", label: "Give" },
   { href: "#contact", label: "Contact" },
 ];
 
 export function Footer() {
   return (
     <footer
-      className="bg-footer pb-[calc(5.25rem+env(safe-area-inset-bottom))] text-white/70 lg:pb-0"
+      className="bg-footer pb-[calc(5.5rem+env(safe-area-inset-bottom))] text-white/75 lg:pb-0"
       role="contentinfo"
     >
       <div className="mx-auto max-w-[1080px] px-4 py-8 sm:px-6 lg:px-8">
@@ -26,8 +25,8 @@ export function Footer() {
             >
               {site.name}
             </a>
-            <p className="mt-1 text-xs text-white/50">{site.heroMeta}</p>
-            <p className="mt-0.5 text-xs text-white/40">{site.address.line2}</p>
+            <p className="mt-1 text-xs text-white/70">{site.heroMeta}</p>
+            <p className="mt-0.5 text-xs text-white/60">{site.address.line2}</p>
           </div>
 
           <nav aria-label="Footer" className="max-w-md">
@@ -65,7 +64,7 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-6 border-t border-white/10 pt-5 text-center text-xs text-white/45">
+        <p className="mt-6 border-t border-white/10 pt-5 text-center text-xs text-white/55">
           &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
       </div>

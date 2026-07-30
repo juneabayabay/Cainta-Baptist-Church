@@ -29,10 +29,9 @@ export const site = {
       "https://www.google.com/maps/search/?api=1&query=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
   },
   address: {
-    line1: "157 Marick Drive, Subdivision",
+    line1: "157 Marick Drive Subdivision",
     line2: "Cainta, Rizal 1900, Philippines",
-    full: "157 Marick Drive, Subdivision, Cainta, Rizal 1900, Philippines",
-    landmark: "Street parking nearby.",
+    full: "157 Marick Drive Subdivision, Cainta, Rizal 1900, Philippines",
     parking: "Street parking nearby.",
     mapsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
@@ -72,7 +71,7 @@ export const site = {
     {
       question: "What time should I arrive?",
       answer:
-        "Come by 9:00 AM for Small Group, or by 10:00 AM for Worship. See Visit for the full schedule.",
+        "Come by 9:00 AM for Small Group, or by 10:00 AM for Worship. Wednesday prayer is 6:30–8:30 PM.",
     },
     {
       question: "Is there parking?",
@@ -90,11 +89,11 @@ export const site = {
   testimonials: [
     {
       quote: "I walked in nervous — and left feeling like I finally belonged.",
-      author: "First-time guest",
+      author: "A Sunday guest",
     },
     {
       quote: "This church reminded me that God still has hope for my life.",
-      author: "Church member",
+      author: "Someone from our church family",
     },
   ],
   expect: [
@@ -132,32 +131,22 @@ export const site = {
     {
       src: "/community-joy.jpg",
       alt: "Church family sharing joy after worship",
-      caption: "Joy",
+      caption: "Life together",
     },
     {
-      src: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1600&q=80",
-      alt: "Worship together on Sunday",
-      caption: "Worship",
+      src: "/invite-sanctuary.jpg",
+      alt: "Quiet sanctuary light inviting prayer",
+      caption: "A place to pray",
     },
     {
-      src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80",
-      alt: "Church family sharing a warm moment",
-      caption: "Belonging",
+      src: "/hero-come-home.jpg",
+      alt: "Warm welcome outside the church",
+      caption: "You are welcome",
     },
     {
-      src: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1200&q=80",
-      alt: "People gathered in church",
-      caption: "Welcome",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
-      alt: "Friends praying together",
-      caption: "Prayer",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
-      alt: "Music and praise during service",
-      caption: "Hope",
+      src: "/hero-welcome-v2.jpg",
+      alt: "People gathering for Sunday worship",
+      caption: "Sunday gathering",
     },
   ],
   hours: {

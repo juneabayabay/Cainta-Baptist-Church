@@ -5,8 +5,10 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { phoneLinkProps } from "@/lib/contact";
 import { site } from "@/lib/site";
 
-const hasFormKey =
-  Boolean(process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim());
+const hasFormKey = (() => {
+  const key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() ?? "";
+  return Boolean(key) && !/your-web3forms|example|changeme/i.test(key);
+})();
 
 export function Contact() {
   const phone = phoneLinkProps();
@@ -27,7 +29,7 @@ export function Contact() {
           />
         </Reveal>
 
-        <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:gap-5">
+        <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-5">
           <Reveal variant="left">
             <div className="space-y-4">
               <div className="card bg-footer px-5 py-7 text-white sm:px-7">

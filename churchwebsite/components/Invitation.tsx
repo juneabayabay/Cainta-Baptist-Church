@@ -17,8 +17,8 @@ export function Invitation() {
           className="object-cover"
           quality={85}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,35,72,0.78)_0%,rgba(21,36,72,0.88)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(201,168,76,0.2),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,28,56,0.82)_0%,rgba(18,28,56,0.92)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_25%,rgba(212,176,106,0.22),transparent_58%)]" />
       </div>
 
       <div className="section-shell relative">

@@ -4,9 +4,12 @@ import { Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { site } from "@/lib/site";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "error" | "invalid";
 
 const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() ?? "";
+const hasRealKey =
+  Boolean(accessKey) &&
+  !/your-web3forms|example|changeme/i.test(accessKey);
 
 const inputClass =
   "w-full rounded-xl border border-[color:var(--foreground)]/8 bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-primary focus:ring-2 focus:ring-primary/15 disabled:opacity-60";
@@ -24,7 +27,12 @@ export function ContactForm() {
     const subject = String(data.get("subject") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
 
-    if (!accessKey) {
+    if (!name || !email || !subject || !message) {
+      setStatus("invalid");
+      return;
+    }
+
+    if (!hasRealKey) {
       window.open(site.social.messenger, "_blank", "noopener,noreferrer");
       setStatus("sent");
       form.reset();
@@ -64,7 +72,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4" noValidate>
+    <form onSubmit={onSubmit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-left">
           <span className="mb-1.5 block text-sm font-medium">Name</span>
@@ -126,16 +134,20 @@ export function ContactForm() {
           <Send className="h-4 w-4" aria-hidden />
           {status === "sending"
             ? "Sending…"
-            : accessKey
+            : hasRealKey
               ? "Send message"
               : "Continue in Messenger"}
         </button>
 
         {status === "sent" ? (
           <p className="text-sm text-muted" role="status">
-            {accessKey
+            {hasRealKey
               ? "Thank you — we received your message."
               : "Opening Messenger so we can reply…"}
+          </p>
+        ) : status === "invalid" ? (
+          <p className="text-sm text-red-700" role="alert">
+            Please complete all fields.
           </p>
         ) : status === "error" ? (
           <p className="text-sm text-red-700" role="alert">
@@ -146,7 +158,7 @@ export function ContactForm() {
               rel="noopener noreferrer"
               className="font-semibold underline"
             >
-              Message us instead
+              Message us on Messenger
             </a>
             .
           </p>

@@ -45,9 +45,9 @@ export function FAQ() {
                       aria-expanded={isOpen}
                       aria-controls={panelId}
                       onClick={() => setOpenIndex(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6"
+                      className="flex w-full items-center justify-between gap-3 px-4 py-3.5 text-left sm:gap-4 sm:px-6 sm:py-4"
                     >
-                      <span className="font-serif text-[0.95rem] font-semibold sm:text-base">
+                      <span className="min-w-0 flex-1 font-serif text-[0.9rem] font-semibold leading-snug sm:text-base">
                         {item.question}
                       </span>
                       <ChevronDown

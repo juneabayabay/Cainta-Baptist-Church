@@ -10,7 +10,7 @@ export function JsonLd() {
     description: `${site.description} ${site.heroMeta}`,
     url: site.url,
     email: site.email,
-    telephone: site.phone,
+    ...(site.phoneIsPlaceholder ? {} : { telephone: site.phone }),
     image: `${site.url}/hero-come-home.jpg`,
     address: {
       "@type": "PostalAddress",

@@ -42,6 +42,8 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
     locale: "en_PH",
+    url: site.url,
+    siteName: site.name,
     images: [{ url: "/hero-come-home.jpg", alt: site.name }],
   },
   icons: {
@@ -52,6 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.name,
     description: site.description,
+    images: ["/hero-come-home.jpg"],
   },
 };
 

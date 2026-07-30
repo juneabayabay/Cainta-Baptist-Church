@@ -18,12 +18,13 @@ export function Hero() {
           sizes="100vw"
           className="object-cover object-[72%_center] sm:object-[68%_center] hero-kenburns scale-105"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(15,35,72,0.92)_0%,rgba(26,58,143,0.55)_38%,rgba(26,58,143,0.12)_68%,transparent_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,35,72,0.28)_0%,transparent_38%,rgba(15,35,72,0.55)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(18,28,56,0.93)_0%,rgba(30,58,114,0.58)_42%,rgba(30,58,114,0.15)_72%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,28,56,0.35)_0%,transparent_40%,rgba(18,28,56,0.62)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(212,176,106,0.18),transparent_50%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1080px] px-4 pt-28 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] sm:px-6 sm:pt-32 sm:pb-24 lg:px-8 lg:pb-28">
-        <div className="max-w-xl">
+      <div className="relative z-10 mx-auto w-full max-w-[1080px] px-4 pt-[max(6.5rem,env(safe-area-inset-top)+5rem)] pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] sm:px-6 sm:pt-32 sm:pb-24 lg:px-8 lg:pb-28">
+        <div className="max-w-xl min-w-0">
           <p className="hero-enter mb-3 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
             {site.name}
           </p>

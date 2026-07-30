@@ -36,7 +36,7 @@ export function Services() {
                   <h3 className="mb-1 font-serif text-lg font-semibold">
                     {service.title}
                   </h3>
-                  <p className="mb-2 text-sm font-semibold text-accent">
+                  <p className="mb-2 text-sm font-semibold text-primary">
                     {service.time}
                   </p>
                   <p className="mb-4 flex-1 text-sm text-muted">

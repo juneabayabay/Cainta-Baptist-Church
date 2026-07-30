@@ -44,7 +44,7 @@ export function Visit() {
                       </p>
                       <p className="text-sm text-muted">{service.description}</p>
                     </div>
-                    <p className="shrink-0 self-start rounded-full bg-accent/20 px-3 py-1.5 text-sm font-semibold whitespace-nowrap text-primary sm:self-auto">
+                    <p className="shrink-0 self-start rounded-full bg-accent-muted/50 px-2.5 py-1 text-xs font-semibold text-primary sm:self-auto sm:px-3 sm:py-1.5 sm:text-sm">
                       {service.time.replace("Sunday · ", "")}
                     </p>
                   </li>

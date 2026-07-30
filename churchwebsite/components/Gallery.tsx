@@ -25,7 +25,7 @@ export function Gallery() {
           />
         </Reveal>
 
-        <div className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-3 lg:gap-4">
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4 lg:gap-4">
           {site.gallery.map((photo, i) => (
             <Reveal key={photo.src} delayMs={i * 50} variant="scale" className="h-full">
               <figure className="group card overflow-hidden p-0">
@@ -37,7 +37,7 @@ export function Gallery() {
                     sizes="(max-width: 639px) 50vw, (max-width: 1023px) 50vw, 33vw"
                     className="object-cover transition duration-700 group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,35,72,0.7)] via-transparent to-transparent opacity-80 transition group-hover:opacity-90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--footer)]/85 via-[color:var(--footer)]/20 to-transparent opacity-90 transition group-hover:opacity-95" />
                   <figcaption className="absolute right-0 bottom-0 left-0 p-3 sm:p-4">
                     <p className="text-xs font-medium text-white sm:text-sm">
                       {photo.caption}

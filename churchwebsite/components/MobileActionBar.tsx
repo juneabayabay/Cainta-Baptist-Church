@@ -1,15 +1,18 @@
 "use client";
 
-import { HeartHandshake, MapPin, MessageCircle } from "lucide-react";
-import { phoneLinkProps } from "@/lib/contact";
+import { HeartHandshake, MapPin, MessageCircle, Phone } from "lucide-react";
+import { phoneLabel, phoneLinkProps } from "@/lib/contact";
 import { site } from "@/lib/site";
 
 export function MobileActionBar() {
   const phone = phoneLinkProps();
+  const isMessenger = site.phoneIsPlaceholder;
+  const ContactIcon = isMessenger ? MessageCircle : Phone;
+  const contactLabel = isMessenger ? "Messenger" : "Call";
 
   return (
     <div
-      className="fixed right-0 bottom-0 left-0 z-40 border-t border-[color:var(--foreground)]/8 bg-background/98 px-3 pt-2.5 pb-[calc(0.65rem+env(safe-area-inset-bottom,0px))] shadow-[0_-6px_24px_rgba(21,36,72,0.08)] backdrop-blur-md lg:hidden"
+      className="fixed right-0 bottom-0 left-0 z-40 border-t border-[color:var(--border-soft)] bg-background/98 px-3 pt-2.5 pb-[calc(0.65rem+env(safe-area-inset-bottom,0px))] shadow-[0_-8px_28px_var(--shadow-color)] backdrop-blur-md lg:hidden"
       role="navigation"
       aria-label="Quick actions"
     >
@@ -18,24 +21,25 @@ export function MobileActionBar() {
           href={site.address.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1 py-2.5 text-xs leading-tight font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
+          className="flex min-h-[3rem] min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl border border-[color:var(--border-soft)] bg-secondary-light/90 px-1 py-2 text-[0.68rem] leading-tight font-semibold text-foreground transition active:scale-[0.97] sm:text-xs"
         >
-          <MapPin className="h-5 w-5 text-primary" aria-hidden />
-          Directions
+          <MapPin className="h-[1.15rem] w-[1.15rem] shrink-0 text-primary" aria-hidden />
+          <span className="truncate">Directions</span>
         </a>
         <a
           {...phone}
-          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl border border-[color:var(--foreground)]/10 bg-secondary-light/80 px-1 py-2.5 text-xs leading-tight font-semibold text-foreground transition active:scale-[0.97] active:bg-secondary-light"
+          className="flex min-h-[3rem] min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl border border-[color:var(--border-soft)] bg-secondary-light/90 px-1 py-2 text-[0.68rem] leading-tight font-semibold text-foreground transition active:scale-[0.97] sm:text-xs"
+          aria-label={phoneLabel()}
         >
-          <MessageCircle className="h-5 w-5 text-primary" aria-hidden />
-          Message
+          <ContactIcon className="h-[1.15rem] w-[1.15rem] shrink-0 text-primary" aria-hidden />
+          <span className="truncate">{contactLabel}</span>
         </a>
         <a
           href="#visit"
-          className="flex min-h-12 flex-col items-center justify-center gap-1 rounded-2xl bg-primary px-1 py-2.5 text-xs leading-tight font-semibold text-white shadow-sm transition active:scale-[0.97] active:bg-primary-hover"
+          className="flex min-h-[3rem] min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl bg-primary px-1 py-2 text-[0.68rem] leading-tight font-semibold text-white shadow-sm transition active:scale-[0.97] sm:text-xs"
         >
-          <HeartHandshake className="h-5 w-5" aria-hidden />
-          Visit
+          <HeartHandshake className="h-[1.15rem] w-[1.15rem] shrink-0" aria-hidden />
+          <span className="truncate">Visit</span>
         </a>
       </div>
     </div>
