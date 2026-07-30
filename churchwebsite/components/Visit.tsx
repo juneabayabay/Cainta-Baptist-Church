@@ -1,116 +1,96 @@
-import { Clock, MapPin, Navigation, Smile } from "lucide-react";
+import { Clock, MapPin, Navigation } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
 
 export function Visit() {
   return (
-    <section id="visit" className="section-shell surface-visit">
+    <section id="visit" className="section-shell surface-white">
       <div className="section-inner">
         <Reveal>
-          <div className="mb-10 text-center sm:mb-12 md:mb-14">
-            <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
-              Plan your visit
-            </p>
-            <h2 className="mb-3 font-serif text-[1.85rem] leading-tight font-semibold tracking-tight sm:text-[2.15rem] md:text-[2.5rem]">
-              When &amp; where to{" "}
-              <span className="text-accent">find us</span>
-            </h2>
-            <p className="mx-auto max-w-lg text-base text-muted sm:text-lg">
-              Clear times, a simple address, and people glad you came.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="Plan your visit"
+            title={
+              <>
+                When &amp; where to{" "}
+                <span className="text-accent">find us</span>
+              </>
+            }
+            description="Sunday times, our address, and a map — everything you need."
+          />
         </Reveal>
 
-        <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr] lg:gap-6">
+        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
           <Reveal>
-            <div className="overflow-hidden rounded-3xl border border-black/[0.05] bg-white shadow-[0_4px_24px_rgba(24,34,45,0.04)]">
-              <div className="border-b border-black/[0.05] px-5 py-5 sm:px-7">
-                <h3 className="flex items-center gap-2.5 font-serif text-xl font-semibold">
+            <div className="card overflow-hidden">
+              <div className="border-b border-[color:var(--foreground)]/6 px-5 py-4 sm:px-6">
+                <h3 className="flex items-center gap-2 font-serif text-lg font-semibold">
                   <Clock className="h-5 w-5 text-accent" aria-hidden />
-                  Sunday
+                  Sunday schedule
                 </h3>
               </div>
-              <ul className="divide-y divide-black/[0.05]">
+              <ul className="divide-y divide-[color:var(--foreground)]/6">
                 {site.services.slice(0, 2).map((service) => (
                   <li
                     key={service.title}
-                    className="flex flex-col gap-2 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-7"
+                    className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6"
                   >
                     <div>
                       <p className="font-semibold text-foreground">
                         {service.title}
                       </p>
-                      <p className="mt-0.5 text-sm text-muted">
-                        {service.description}
-                      </p>
+                      <p className="text-sm text-muted">{service.description}</p>
                     </div>
-                    <p className="shrink-0 text-sm font-semibold text-accent sm:text-right">
+                    <p className="shrink-0 text-sm font-semibold text-accent">
                       {service.time.replace("Sunday · ", "")}
                     </p>
                   </li>
                 ))}
               </ul>
-              <div className="flex items-start gap-3 border-t border-black/[0.05] bg-cream/80 px-5 py-4 sm:px-7">
-                <Smile
-                  className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                  aria-hidden
-                />
-                <p className="text-sm text-muted-dark">
-                  <strong className="text-foreground">Kids &amp; family welcome.</strong>{" "}
-                  Bring them — the whole family belongs here.
-                </p>
-              </div>
+              <p className="border-t border-[color:var(--foreground)]/6 bg-cream/50 px-5 py-3.5 text-sm text-muted-dark sm:px-6">
+                Kids and families are welcome — bring everyone.
+              </p>
             </div>
           </Reveal>
 
-          <Reveal delayMs={100}>
-            <div className="flex h-full flex-col justify-between rounded-3xl bg-footer px-6 py-7 text-white sm:px-7 sm:py-8">
-              <div>
-                <h3 className="mb-5 flex items-center gap-2.5 font-serif text-xl font-semibold">
-                  <MapPin className="h-5 w-5 text-white/70" aria-hidden />
-                  Find us
-                </h3>
+          <Reveal delayMs={80}>
+            <div className="card flex h-full flex-col bg-footer px-5 py-6 text-white sm:px-6 sm:py-7">
+              <h3 className="mb-4 flex items-center gap-2 font-serif text-lg font-semibold">
+                <MapPin className="h-5 w-5 text-accent" aria-hidden />
+                Location
+              </h3>
+              <a
+                href={site.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-5 block rounded-xl border border-white/12 bg-white/5 px-4 py-4 transition hover:bg-white/10"
+              >
+                <p className="font-medium">{site.address.line1}</p>
+                <p className="mt-1 text-sm text-white/65">{site.address.line2}</p>
+              </a>
+              <div className="mt-auto flex flex-col gap-2.5">
                 <a
                   href={site.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-5 block rounded-2xl border border-white/12 bg-white/[0.06] px-4 py-4 transition hover:border-white/25 hover:bg-white/[0.1] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                  <p className="mb-1 font-medium">{site.address.line1}</p>
-                  <p className="mb-3 text-sm text-white/65">
-                    {site.address.line2}
-                  </p>
-                  <p className="text-xs font-semibold tracking-wide text-white/90">
-                    Open in Google Maps →
-                  </p>
-                </a>
-                <p className="mb-6 text-sm leading-relaxed text-white/60">
-                  Lost on the way? Call us — we will help you find the church.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3">
-                <a
-                  href={site.address.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-footer transition hover:bg-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="btn btn-white text-sm"
                 >
                   <Navigation className="h-4 w-4" aria-hidden />
                   Get directions
                 </a>
                 <a
                   href={`tel:${site.phone}`}
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white hover:text-footer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="btn btn-ghost-light text-sm"
                 >
-                  Call us
+                  Call {site.phoneDisplay}
                 </a>
               </div>
             </div>
           </Reveal>
         </div>
 
-        <Reveal delayMs={80}>
-          <div className="mt-5 overflow-hidden rounded-3xl border border-black/[0.05] bg-white shadow-[0_4px_24px_rgba(24,34,45,0.04)] sm:mt-6">
+        <Reveal delayMs={60}>
+          <div className="card mt-5 overflow-hidden p-0">
             <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
               <iframe
                 title={`Map showing ${site.name}`}

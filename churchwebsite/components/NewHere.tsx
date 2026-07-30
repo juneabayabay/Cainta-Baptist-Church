@@ -1,107 +1,47 @@
-import { Coffee, DoorOpen, HandHeart, UsersRound } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
-
-const journey = [
-  {
-    icon: DoorOpen,
-    title: "You walk in",
-    text: "A warm hello. No pressure. Just welcome.",
-  },
-  {
-    icon: Coffee,
-    title: "You feel at home",
-    text: "Sit anywhere. Ask anything. Breathe.",
-  },
-  {
-    icon: UsersRound,
-    title: "You meet people",
-    text: "Small group at 8 AM — gentle friendship.",
-  },
-  {
-    icon: HandHeart,
-    title: "You grow with us",
-    text: "Worship, prayer, and care — Sunday by Sunday.",
-  },
-];
 
 export function NewHere() {
   return (
     <section
       id="new-here"
-      className="section-shell surface-welcome"
+      className="section-shell surface-soft"
       aria-labelledby="new-here-heading"
     >
       <div className="section-inner">
         <Reveal>
-          <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
-            <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
-              First time visiting?
-            </p>
-            <h2
-              id="new-here-heading"
-              className="mb-4 font-serif text-[1.75rem] leading-tight font-semibold tracking-tight sm:text-[2.1rem] md:text-[2.4rem]"
-            >
-              We saved a seat{" "}
-              <span className="text-accent">for you</span>
-            </h2>
-            <p className="text-base leading-relaxed text-muted sm:text-lg">
-              Walking into a new church can feel hard. You do not have to figure
-              it out alone — God is inviting you, and we will walk with you.
-            </p>
-          </div>
+          <SectionHeader
+            id="new-here-heading"
+            eyebrow="First visit"
+            title={
+              <>
+                We saved a seat{" "}
+                <span className="text-accent">for you</span>
+              </>
+            }
+            description="Walking into a new church can feel intimidating. Here is what you can expect — no surprises, just welcome."
+          />
         </Reveal>
 
-        <div className="mb-10 grid grid-cols-1 gap-8 min-[480px]:grid-cols-2 lg:mb-12 lg:grid-cols-4 lg:gap-6">
-          {journey.map(({ icon: Icon, title, text }, i) => (
-            <Reveal key={title} delayMs={i * 90}>
-              <article className="relative text-center sm:text-left">
-                <span
-                  className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-footer text-sm font-bold text-white"
-                  aria-hidden
-                >
-                  {i + 1}
-                </span>
-                <div className="mb-3 flex justify-center text-accent sm:justify-start">
-                  <Icon className="h-6 w-6" strokeWidth={1.6} aria-hidden />
-                </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:gap-5">
+          {site.expect.map((item, i) => (
+            <Reveal key={item.title} delayMs={i * 60}>
+              <article className="card h-full px-5 py-5 sm:px-6 sm:py-6">
                 <h3 className="mb-2 font-serif text-lg font-semibold text-foreground">
-                  {title}
+                  {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-muted sm:text-[0.95rem]">
-                  {text}
+                <p className="text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+                  {item.text}
                 </p>
               </article>
             </Reveal>
           ))}
         </div>
 
-        <Reveal delayMs={60}>
-          <div className="mb-10 rounded-3xl border border-black/[0.05] bg-background px-5 py-7 sm:mb-12 sm:px-8 sm:py-8">
-            <h3 className="mb-6 text-center font-serif text-xl font-semibold text-foreground sm:text-[1.35rem]">
-              What to expect
-            </h3>
-            <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6">
-              {site.expect.map((item) => (
-                <li key={item.title}>
-                  <p className="mb-1 text-sm font-semibold text-foreground">
-                    {item.title}
-                  </p>
-                  <p className="text-sm leading-relaxed text-muted">
-                    {item.text}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
-
-        <Reveal delayMs={100}>
-          <div className="flex justify-center">
-            <a
-              href="#visit"
-              className="inline-flex min-h-12 w-full max-w-xs items-center justify-center rounded-full bg-accent px-8 py-3 text-[0.95rem] font-semibold text-footer transition hover:-translate-y-0.5 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto"
-            >
+        <Reveal delayMs={80}>
+          <div className="mt-10 flex justify-center">
+            <a href="#visit" className="btn btn-primary w-full max-w-xs sm:w-auto">
               See times &amp; directions
             </a>
           </div>

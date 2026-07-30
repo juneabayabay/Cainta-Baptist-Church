@@ -8,6 +8,9 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() ?? "";
 
+const inputClass =
+  "w-full rounded-xl border border-[color:var(--foreground)]/8 bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60";
+
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
 
@@ -22,7 +25,6 @@ export function ContactForm() {
     const message = String(data.get("message") ?? "").trim();
 
     if (!accessKey) {
-      // No key yet — fall back to Facebook Messenger so the visitor still gets through
       window.open(site.social.messenger, "_blank", "noopener,noreferrer");
       setStatus("sent");
       form.reset();
@@ -62,12 +64,10 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5" noValidate>
-      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+    <form onSubmit={onSubmit} className="space-y-4" noValidate>
+      <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-left">
-          <span className="mb-1.5 block text-sm font-medium text-foreground">
-            Full Name
-          </span>
+          <span className="mb-1.5 block text-sm font-medium">Name</span>
           <input
             type="text"
             name="name"
@@ -75,51 +75,45 @@ export function ContactForm() {
             autoComplete="name"
             placeholder="Your name"
             disabled={status === "sending"}
-            className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
+            className={inputClass}
           />
         </label>
 
         <label className="block text-left">
-          <span className="mb-1.5 block text-sm font-medium text-foreground">
-            Email Address
-          </span>
+          <span className="mb-1.5 block text-sm font-medium">Email</span>
           <input
             type="email"
             name="email"
             required
             autoComplete="email"
-            placeholder="your.email@example.com"
+            placeholder="you@example.com"
             disabled={status === "sending"}
-            className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
+            className={inputClass}
           />
         </label>
       </div>
 
       <label className="block text-left">
-        <span className="mb-1.5 block text-sm font-medium text-foreground">
-          Subject
-        </span>
+        <span className="mb-1.5 block text-sm font-medium">Subject</span>
         <input
           type="text"
           name="subject"
           required
           placeholder="Visit this Sunday, prayer request…"
           disabled={status === "sending"}
-          className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
+          className={inputClass}
         />
       </label>
 
       <label className="block text-left">
-        <span className="mb-1.5 block text-sm font-medium text-foreground">
-          Message
-        </span>
+        <span className="mb-1.5 block text-sm font-medium">Message</span>
         <textarea
           name="message"
           required
-          rows={5}
-          placeholder="Tell us how we can help…"
+          rows={4}
+          placeholder="How can we help?"
           disabled={status === "sending"}
-          className="w-full resize-y rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60"
+          className={`${inputClass} resize-y`}
         />
       </label>
 
@@ -127,7 +121,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-footer transition hover:-translate-y-0.5 hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
+          className="btn btn-primary w-full text-sm disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
         >
           <Send className="h-4 w-4" aria-hidden />
           {status === "sending" ? "Sending…" : "Send message"}
@@ -137,7 +131,7 @@ export function ContactForm() {
           <p className="text-sm text-muted" role="status">
             {accessKey
               ? "Thank you — we received your message."
-              : "Opening Facebook Messenger so we can reply…"}
+              : "Opening Messenger so we can reply…"}
           </p>
         ) : status === "error" ? (
           <p className="text-sm text-red-700" role="alert">
@@ -146,17 +140,13 @@ export function ContactForm() {
               href={site.social.messenger}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold underline underline-offset-2"
+              className="font-semibold underline"
             >
-              Message us on Facebook
-            </a>{" "}
-            instead.
+              Message us instead
+            </a>
+            .
           </p>
-        ) : (
-          <p className="text-xs text-muted sm:text-sm">
-            We reply as soon as we can.
-          </p>
-        )}
+        ) : null}
       </div>
     </form>
   );
