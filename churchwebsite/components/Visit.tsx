@@ -25,7 +25,7 @@ export function Visit() {
             <div className="card overflow-hidden">
               <div className="border-b border-[color:var(--foreground)]/6 px-5 py-4 sm:px-6">
                 <h3 className="flex items-center gap-2 font-serif text-lg font-semibold">
-                  <Clock className="h-5 w-5 text-accent" aria-hidden />
+                  <Clock className="h-5 w-5 text-primary" aria-hidden />
                   Sunday schedule
                 </h3>
               </div>
@@ -41,20 +41,20 @@ export function Visit() {
                       </p>
                       <p className="text-sm text-muted">{service.description}</p>
                     </div>
-                    <p className="shrink-0 text-sm font-semibold text-accent">
+                    <p className="shrink-0 text-sm font-semibold text-primary">
                       {service.time.replace("Sunday · ", "")}
                     </p>
                   </li>
                 ))}
               </ul>
-              <p className="border-t border-[color:var(--foreground)]/6 bg-cream/50 px-5 py-3.5 text-sm text-muted-dark sm:px-6">
+              <p className="border-t border-[color:var(--foreground)]/6 bg-secondary-light/60 px-5 py-3.5 text-sm text-muted-dark sm:px-6">
                 Kids and families are welcome — bring everyone.
               </p>
             </div>
           </Reveal>
 
           <Reveal delayMs={80}>
-            <div className="card flex h-full flex-col bg-footer px-5 py-6 text-white sm:px-6 sm:py-7">
+            <div className="card flex h-full flex-col bg-primary-dark px-5 py-6 text-white sm:px-6 sm:py-7">
               <h3 className="mb-4 flex items-center gap-2 font-serif text-lg font-semibold">
                 <MapPin className="h-5 w-5 text-accent" aria-hidden />
                 Location

@@ -34,7 +34,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal delayMs={70}>
-            <div className="card flex h-full flex-col justify-center bg-footer px-5 py-7 text-white sm:px-7 sm:py-8">
+            <div className="card flex h-full flex-col justify-center bg-primary-dark px-5 py-7 text-white sm:px-7 sm:py-8">
               <p className="section-eyebrow mb-3 text-white/50 before:bg-white/30">
                 Prefer chat?
               </p>

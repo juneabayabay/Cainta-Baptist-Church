@@ -58,7 +58,7 @@ export function Navbar() {
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
         solid
           ? "border-b border-[color:var(--foreground)]/6 bg-background/96 py-3 shadow-sm backdrop-blur-md"
-          : "border-b border-transparent bg-gradient-to-b from-[rgba(18,28,51,0.5)] to-transparent py-4"
+          : "border-b border-transparent bg-gradient-to-b from-[rgba(46,107,173,0.55)] to-transparent py-4"
       }`}
       aria-label="Main navigation"
     >
@@ -88,11 +88,11 @@ export function Navbar() {
                 onClick={closeMenu}
                 className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors lg:px-0 lg:py-0 ${
                   active === link.href
-                    ? "text-foreground lg:text-accent"
+                    ? "text-primary lg:text-primary"
                     : solid
                       ? "text-muted-dark hover:text-foreground"
-                      : "text-white/85 hover:text-white lg:text-white/85 lg:hover:text-white"
-                } ${open ? "hover:bg-cream" : ""}`}
+                      : "text-white/90 hover:text-white lg:text-white/90 lg:hover:text-white"
+                } ${open ? "hover:bg-secondary-light" : ""}`}
               >
                 {link.label}
               </a>
@@ -103,7 +103,7 @@ export function Navbar() {
               href="#visit"
               onClick={closeMenu}
               className={`btn btn-primary w-full text-sm lg:w-auto lg:px-5 lg:py-2 ${
-                !solid && !open ? "lg:bg-white lg:text-footer lg:hover:bg-cream" : ""
+                !solid && !open ? "lg:bg-white lg:text-primary-dark lg:hover:bg-cream" : ""
               }`}
             >
               Visit Sunday

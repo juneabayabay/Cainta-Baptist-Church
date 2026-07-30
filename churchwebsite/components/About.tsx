@@ -64,7 +64,7 @@ export function About() {
 
         <div className="grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
           <Reveal>
-            <figure className="card flex h-full flex-col bg-footer px-6 py-8 text-white sm:px-8 sm:py-9">
+            <figure className="card flex h-full flex-col bg-primary-dark px-6 py-8 text-white sm:px-8 sm:py-9">
               <div className="mb-6 h-16 w-16 rounded-full bg-white/10" aria-hidden />
               <figcaption>
                 <p className="font-serif text-xl font-semibold sm:text-2xl">

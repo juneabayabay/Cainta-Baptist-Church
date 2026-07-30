@@ -78,14 +78,14 @@ export function Give() {
                     <li key={title} className="px-5 py-5 sm:px-6">
                       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex min-w-0 items-start gap-3">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cream text-accent">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary-light text-primary">
                             <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden />
                           </div>
                           <div className="min-w-0">
                             <h3 className="text-sm font-semibold text-foreground">
                               {title}
                             </h3>
-                            <p className="mt-0.5 text-sm font-medium text-accent">
+                            <p className="mt-0.5 text-sm font-medium text-primary">
                               {isPlaceholder
                                 ? "Message us for details"
                                 : detail}

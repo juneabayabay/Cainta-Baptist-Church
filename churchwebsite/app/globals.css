@@ -1,21 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f7f9;
+  /* Peace & Welcome */
+  --background: #f8f6f2;
   --surface: #ffffff;
-  --foreground: #1a2744;
-  --accent: #b08d57;
-  --accent-hover: #9a7849;
-  --muted: #5f6b80;
-  --muted-dark: #3e4a61;
-  --cream: #eef1f5;
-  --border-soft: #dde2ea;
-  --footer: #121c33;
+  --foreground: #333333;
+  --primary: #4a90e2;
+  --primary-hover: #3a7bc8;
+  --primary-dark: #2e6bad;
+  --secondary: #8faf8f;
+  --secondary-light: #e8f0e8;
+  --accent: #d4af37;
+  --accent-hover: #b8942f;
+  --muted: #666666;
+  --muted-dark: #444444;
+  --cream: #f0ede8;
+  --border-soft: #e5e0d8;
+  --footer: #2e6bad;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-muted: var(--muted);
@@ -55,11 +66,11 @@ video {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  background: color-mix(in srgb, var(--primary) 25%, transparent);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
 }
 
@@ -69,7 +80,7 @@ video {
   top: -100%;
   z-index: 100;
   border-radius: 999px;
-  background: var(--foreground);
+  background: var(--primary-dark);
   color: #fff;
   padding: 0.65rem 1.1rem;
   font-size: 0.9rem;
@@ -120,7 +131,6 @@ video {
   max-width: 720px;
 }
 
-/* Alternating calm backgrounds */
 .surface-base {
   background: var(--background);
 }
@@ -132,13 +142,13 @@ video {
 .surface-soft {
   background: linear-gradient(
     180deg,
-    var(--cream) 0%,
+    var(--secondary-light) 0%,
     var(--background) 100%
   );
 }
 
 .surface-navy {
-  background: var(--footer);
+  background: var(--primary-dark);
   color: #fff;
 }
 
@@ -151,7 +161,7 @@ video {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .section-eyebrow::before {
@@ -179,9 +189,9 @@ video {
 /* —— Components —— */
 .card {
   border-radius: 1rem;
-  border: 1px solid color-mix(in srgb, var(--foreground) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--foreground) 8%, transparent);
   background: var(--surface);
-  box-shadow: 0 1px 3px rgba(18, 28, 51, 0.04);
+  box-shadow: 0 1px 4px rgba(51, 51, 51, 0.05);
 }
 
 @media (min-width: 640px) {
@@ -212,12 +222,12 @@ video {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: var(--foreground);
+  background: var(--primary);
+  color: #fff;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: var(--primary-hover);
 }
 
 .btn-secondary {
@@ -227,31 +237,40 @@ video {
 }
 
 .btn-secondary:hover {
-  border-color: var(--foreground);
-  background: var(--foreground);
+  border-color: var(--primary);
+  background: var(--primary);
   color: #fff;
 }
 
 .btn-ghost-light {
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
   backdrop-filter: blur(8px);
 }
 
 .btn-ghost-light:hover {
   background: #fff;
-  color: var(--footer);
+  color: var(--primary-dark);
 }
 
 .btn-white {
   background: #fff;
-  color: var(--footer);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  color: var(--primary-dark);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-white:hover {
   background: var(--cream);
+}
+
+.btn-gold {
+  background: var(--accent);
+  color: var(--foreground);
+}
+
+.btn-gold:hover {
+  background: var(--accent-hover);
 }
 
 /* —— Motion —— */

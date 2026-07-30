@@ -9,7 +9,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() ?? "";
 
 const inputClass =
-  "w-full rounded-xl border border-[color:var(--foreground)]/8 bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15 disabled:opacity-60";
+  "w-full rounded-xl border border-[color:var(--foreground)]/8 bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-primary focus:ring-2 focus:ring-primary/15 disabled:opacity-60";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");

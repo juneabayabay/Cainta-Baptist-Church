@@ -30,7 +30,7 @@ export function CopyButton({ value, label = "Copy" }: CopyButtonProps) {
     >
       {copied ? (
         <>
-          <Check className="h-3.5 w-3.5 text-accent" aria-hidden />
+          <Check className="h-3.5 w-3.5 text-primary" aria-hidden />
           Copied
         </>
       ) : (

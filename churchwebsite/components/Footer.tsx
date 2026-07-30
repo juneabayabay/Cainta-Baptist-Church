@@ -12,7 +12,7 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="bg-footer text-[#9aa3b5]" role="contentinfo">
+    <footer className="bg-primary-dark text-white/70" role="contentinfo">
       <div className="mx-auto max-w-[1080px] px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
@@ -22,7 +22,7 @@ export function Footer() {
             >
               {site.name}
             </a>
-            <p className="mt-1 text-xs text-[#6d778c]">
+            <p className="mt-1 text-xs text-white/50">
               {site.address.line2}
             </p>
           </div>
@@ -62,7 +62,7 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-6 border-t border-white/8 pt-5 text-center text-xs text-[#6d778c]">
+        <p className="mt-6 border-t border-white/10 pt-5 text-center text-xs text-white/45">
           &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
       </div>
