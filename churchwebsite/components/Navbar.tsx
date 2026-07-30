@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "#new-here", label: "New Here" },
-  { href: "#about", label: "About" },
-  { href: "#photos", label: "Photos" },
   { href: "#visit", label: "Visit" },
+  { href: "#new-here", label: "New Here" },
+  { href: "#fit", label: "About Us" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -24,7 +24,16 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const ids = ["home", ...links.map((l) => l.href.slice(1))];
+    const ids = [
+      "home",
+      "visit",
+      "new-here",
+      "fit",
+      "about",
+      "faq",
+      "photos",
+      "contact",
+    ];
     const observers: IntersectionObserver[] = [];
 
     ids.forEach((id) => {
@@ -32,7 +41,15 @@ export function Navbar() {
       if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActive(id === "home" ? "" : `#${id}`);
+          if (entry.isIntersecting) {
+            const hash =
+              id === "home"
+                ? ""
+                : id === "fit" || id === "about"
+                  ? "#fit"
+                  : `#${id}`;
+            setActive(hash);
+          }
         },
         { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
       );
@@ -66,20 +83,20 @@ export function Navbar() {
         <a
           href="#home"
           onClick={closeMenu}
-          className={`truncate font-serif text-base font-semibold tracking-tight sm:text-lg ${
+          className={`min-w-0 truncate font-serif text-base font-semibold tracking-tight sm:text-lg ${
             solid ? "text-foreground" : "text-white"
           }`}
         >
-          <span className="sm:hidden">CBC</span>
+          <span className="sm:hidden">{site.shortName}</span>
           <span className="hidden sm:inline">{site.name}</span>
         </a>
 
         <ul
-          className={`items-center gap-6 lg:flex ${
+          className={`items-center gap-5 lg:flex xl:gap-6 ${
             open
-              ? "absolute top-full left-0 flex w-full flex-col gap-1 border-b border-[color:var(--foreground)]/6 bg-background px-4 py-4 shadow-lg sm:px-6"
+              ? "absolute top-full left-0 flex max-h-[calc(100dvh-4rem)] w-full flex-col gap-1 overflow-y-auto border-b border-[color:var(--foreground)]/6 bg-background px-4 py-4 shadow-lg sm:px-6"
               : "hidden"
-          } lg:static lg:flex lg:w-auto lg:flex-row lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
+          } lg:static lg:flex lg:max-h-none lg:w-auto lg:flex-row lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
         >
           {links.map((link) => (
             <li key={link.href} className="w-full lg:w-auto">
@@ -88,10 +105,10 @@ export function Navbar() {
                 onClick={closeMenu}
                 className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors lg:px-0 lg:py-0 ${
                   active === link.href
-                    ? "text-secondary lg:text-secondary"
+                    ? "text-secondary"
                     : solid
                       ? "text-muted-dark hover:text-foreground"
-                      : "text-white/90 hover:text-white lg:text-white/90 lg:hover:text-white"
+                      : "text-white/90 hover:text-white"
                 } ${open ? "hover:bg-secondary-light" : ""}`}
               >
                 {link.label}
@@ -111,7 +128,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className={`flex h-10 w-10 items-center justify-center rounded-lg lg:hidden ${
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg lg:hidden ${
             solid ? "text-foreground" : "text-white"
           }`}
           aria-label={open ? "Close menu" : "Open menu"}

@@ -1,9 +1,16 @@
 export const site = {
   name: "Cainta Baptist Church",
+  shortName: "CBC",
   fullName: "Cainta Baptist Church",
+  denomination: "Baptist",
   tagline: "A new day of hope starts here.",
   description:
-    "Cainta Baptist Church — a welcoming family in Cainta, Rizal. Join us this Sunday for worship, friendship, and the hope found in Jesus.",
+    "A welcoming Baptist church in Cainta, Rizal. Join us Sundays for worship, Bible teaching, and community.",
+  heroMeta: "Baptist church in Cainta, Rizal · Worship Sundays 9:00 AM",
+  servingAreas:
+    "Serving Cainta, Rizal and nearby areas including Pasig, Taytay, and Antipolo.",
+  language:
+    "Our services are primarily in English. Tagalog is welcome — many in our church speak both.",
   verse: {
     text: "The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning.",
     reference: "Lamentations 3:22–23",
@@ -12,14 +19,26 @@ export const site = {
   email: "caintabaptistchurchph@gmail.com",
   phone: "+639123456789",
   phoneDisplay: "+63 912 345 6789",
+  /** Replace with real number before launch */
+  phoneIsPlaceholder: true,
   reviews: {
     count: 3,
+    label: "Facebook reviews",
     href: "https://www.facebook.com/CaintaBaptistChurch/reviews",
+  },
+  googleBusiness: {
+    /** Add your Google Business Profile URL when ready */
+    url: "",
+    mapsPlaceUrl:
+      "https://www.google.com/maps/search/?api=1&query=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
   },
   address: {
     line1: "157 Marick Drive, Subdivision",
     line2: "Cainta, Rizal 1900, Philippines",
     full: "157 Marick Drive, Subdivision, Cainta, Rizal 1900, Philippines",
+    landmark:
+      "Located inside Marick Drive Subdivision, Cainta. Search the full address on Google Maps or Waze.",
+    parking: "Street parking is available near the church.",
     mapsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
     mapsSearchUrl:
@@ -30,7 +49,7 @@ export const site = {
       "https://maps.google.com/maps?q=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines&z=17&output=embed",
   },
   visit: {
-    headline: "Everything you need for your first Sunday.",
+    headline: "Times, directions, and map — everything for your first Sunday.",
     tips: [
       {
         title: "Google Maps or Waze",
@@ -46,6 +65,95 @@ export const site = {
       },
     ],
   },
+  /** Quick answers for “Is this church for me?” */
+  fitForYou: [
+    {
+      title: "Denomination",
+      text: "Baptist — we follow Jesus, hold to the Bible, and practice believer's baptism.",
+    },
+    {
+      title: "Language",
+      text: "Primarily English. Tagalog is welcome — our community is bilingual.",
+    },
+    {
+      title: "Service style",
+      text: "Warm worship, clear Bible teaching, and time for prayer and fellowship.",
+    },
+    {
+      title: "Families",
+      text: "Children are welcome. The whole family can worship together.",
+    },
+    {
+      title: "Community size",
+      text: "A close-knit church family — big enough to feel alive, small enough to know your name.",
+    },
+    {
+      title: "First-time guests",
+      text: "No registration needed. Just show up — greeters will help you find a seat.",
+    },
+  ],
+  beliefs: [
+    {
+      title: "The Bible",
+      text: "God's Word is true, trustworthy, and our guide for life and faith.",
+    },
+    {
+      title: "Jesus Christ",
+      text: "Jesus is Lord and Savior. Through faith in Him we find forgiveness and new life.",
+    },
+    {
+      title: "Grace & faith",
+      text: "We are saved by God's grace, not by being good enough. Come as you are.",
+    },
+    {
+      title: "The church",
+      text: "The church is a family of believers who worship, grow, and serve together.",
+    },
+  ],
+  faq: [
+    {
+      question: "Do I need to register before visiting?",
+      answer:
+        "No. You can simply come on Sunday. Greeters at the door will welcome you and help you find a seat.",
+    },
+    {
+      question: "What time should I arrive?",
+      answer:
+        "Small group starts at 8:00 AM. Main worship begins at 9:00 AM and ends around 11:30 AM. Arriving 10 minutes early is helpful.",
+    },
+    {
+      question: "Is there parking?",
+      answer:
+        "Street parking is available near the church. If you have trouble finding a spot, message us and we will help.",
+    },
+    {
+      question: "What about children during the service?",
+      answer:
+        "Children are welcome in the service with their families. If you need help or have questions, ask any greeter or leader.",
+    },
+    {
+      question: "What do Baptists believe?",
+      answer:
+        "We believe the Bible is God's Word, Jesus is Lord and Savior, and every person can know God through faith in Christ. We practice baptism by immersion for those who trust Jesus.",
+    },
+    {
+      question: "Can I visit if I'm not Baptist?",
+      answer:
+        "Absolutely. Everyone is welcome — whether you grew up in church or are exploring faith for the first time.",
+    },
+  ],
+  testimonials: [
+    {
+      quote:
+        "I was nervous my first Sunday, but people genuinely welcomed me. I felt at home right away.",
+      author: "First-time guest",
+    },
+    {
+      quote:
+        "Clear Bible teaching and a caring community. This is our church family now.",
+      author: "Church member",
+    },
+  ],
   expect: [
     {
       title: "What to wear",
@@ -69,6 +177,8 @@ export const site = {
     title: "Pastor",
     quote:
       "Every new morning is a reminder that God gives fresh hope. You do not have to walk alone.",
+    /** Add path e.g. "/pastor.jpg" when you have a photo */
+    photo: "",
   },
   vision:
     "To be a church in Cainta where people discover new life in Jesus and grow in hope together.",

@@ -4,8 +4,11 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
 
 export function Visit() {
+  const googleUrl =
+    site.googleBusiness.url || site.googleBusiness.mapsPlaceUrl;
+
   return (
-    <section id="visit" className="section-shell surface-white">
+    <section id="visit" className="section-shell surface-soft">
       <div className="section-inner">
         <Reveal>
           <SectionHeader
@@ -47,6 +50,10 @@ export function Visit() {
                   </li>
                 ))}
               </ul>
+              <p className="border-t border-[color:var(--foreground)]/6 bg-secondary-light/30 px-5 py-3.5 text-sm text-muted-dark sm:px-6">
+                <strong className="text-foreground">No registration needed.</strong>{" "}
+                Just come — greeters will welcome you at the door.
+              </p>
             </div>
           </Reveal>
 
@@ -56,10 +63,18 @@ export function Visit() {
                 <MapPin className="h-5 w-5 text-primary" aria-hidden />
                 Our address
               </h3>
-              <address className="mb-6 not-italic">
+              <address className="mb-4 not-italic">
                 <p className="font-medium">{site.address.line1}</p>
                 <p className="mt-1 text-sm text-white/70">{site.address.line2}</p>
               </address>
+              <p className="mb-2 text-sm leading-relaxed text-white/65">
+                <strong className="text-white/85">Landmark:</strong>{" "}
+                {site.address.landmark}
+              </p>
+              <p className="mb-6 text-sm text-white/65">
+                <strong className="text-white/85">Parking:</strong>{" "}
+                {site.address.parking}
+              </p>
               <div className="mt-auto grid gap-2.5 sm:grid-cols-2">
                 <a
                   href={site.address.mapsUrl}
@@ -83,7 +98,9 @@ export function Visit() {
                   className="btn btn-ghost-light text-sm sm:col-span-2"
                 >
                   <Phone className="h-4 w-4" aria-hidden />
-                  {site.phoneDisplay}
+                  {site.phoneIsPlaceholder
+                    ? "Call us (update phone in site settings)"
+                    : site.phoneDisplay}
                 </a>
               </div>
             </div>
@@ -95,21 +112,34 @@ export function Visit() {
             <div className="flex flex-col gap-4 border-b border-[color:var(--foreground)]/6 bg-secondary-light/30 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
               <div>
                 <p className="text-xs font-semibold tracking-[0.12em] text-muted uppercase">
-                  Map
+                  Map · {site.denomination} church in Cainta
                 </p>
                 <p className="mt-1 font-medium text-foreground">
                   {site.address.full}
                 </p>
               </div>
-              <a
-                href={site.address.mapsSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary shrink-0 px-4 py-2 text-sm"
-              >
-                Open in Google Maps
-                <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-              </a>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href={site.address.mapsSearchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary shrink-0 px-4 py-2 text-sm"
+                >
+                  Google Maps
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                </a>
+                {googleUrl ? (
+                  <a
+                    href={googleUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary shrink-0 px-4 py-2 text-sm"
+                  >
+                    View on Google
+                    <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                  </a>
+                ) : null}
+              </div>
             </div>
             <div className="relative aspect-[4/3] w-full sm:aspect-[21/9] lg:aspect-[2.4/1]">
               <iframe

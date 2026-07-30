@@ -1,14 +1,46 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
+
+function PastorAvatar() {
+  const initials = site.pastor.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2);
+
+  if (site.pastor.photo) {
+    return (
+      <div className="relative mb-6 h-20 w-20 overflow-hidden rounded-full sm:h-24 sm:w-24">
+        <Image
+          src={site.pastor.photo}
+          alt={site.pastor.name}
+          fill
+          className="object-cover"
+          sizes="96px"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary/25 font-serif text-2xl font-semibold text-primary sm:h-24 sm:w-24"
+      aria-hidden
+    >
+      {initials}
+    </div>
+  );
+}
 
 export function About() {
   const storyText = site.story.body.trim() || site.story.placeholder;
   const storyIsPlaceholder = !site.story.body.trim();
 
   return (
-    <section id="about" className="section-shell surface-white">
+    <section id="about" className="section-shell surface-soft">
       <div className="section-inner">
         <Reveal>
           <SectionHeader
@@ -65,7 +97,7 @@ export function About() {
         <div className="grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
           <Reveal>
             <figure className="card flex h-full flex-col bg-foreground px-6 py-8 text-white sm:px-8 sm:py-9">
-              <div className="mb-6 h-16 w-16 rounded-full bg-primary/20" aria-hidden />
+              <PastorAvatar />
               <figcaption>
                 <p className="font-serif text-xl font-semibold sm:text-2xl">
                   {site.pastor.name}

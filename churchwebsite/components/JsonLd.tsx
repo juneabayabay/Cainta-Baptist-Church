@@ -7,11 +7,11 @@ export function JsonLd() {
     "@type": "Church",
     name: site.name,
     alternateName: site.fullName,
-    description: site.description,
+    description: `${site.description} ${site.heroMeta}`,
     url: site.url,
     email: site.email,
     telephone: site.phone,
-    image: `${site.url}/logo.png`,
+    image: `${site.url}/hero-hope-light-4k.jpg`,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.line1,
@@ -20,6 +20,12 @@ export function JsonLd() {
       postalCode: "1900",
       addressCountry: "PH",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 14.5784,
+      longitude: 121.1169,
+    },
+    areaServed: ["Cainta", "Rizal", "Pasig", "Taytay", "Antipolo"],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -36,6 +42,7 @@ export function JsonLd() {
     ],
     sameAs: [
       site.social.facebook,
+      site.googleBusiness.mapsPlaceUrl,
       site.social.youtube,
       site.social.instagram,
     ].filter(Boolean),

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { MobileActionBar } from "@/components/MobileActionBar";
 import { Navbar } from "@/components/Navbar";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -21,21 +22,22 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} · ${site.fullName}`,
+    default: `${site.name} · Baptist Church in Cainta, Rizal`,
     template: `%s · ${site.name}`,
   },
-  description: site.description,
+  description: `${site.description} ${site.heroMeta}.`,
   keywords: [
     "Cainta Baptist Church",
     "church Cainta",
     "Baptist church Rizal",
-    "Sunday worship Cainta",
     "church near me Cainta",
     "Baptist church near me",
     "church in Cainta Rizal",
+    "Sunday worship Cainta",
+    "church Pasig near Cainta",
   ],
   openGraph: {
-    title: `${site.name} · ${site.fullName}`,
+    title: `${site.name} · Baptist Church in Cainta, Rizal`,
     description: site.description,
     type: "website",
     locale: "en_PH",
@@ -67,6 +69,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <MobileActionBar />
       </body>
     </html>
   );
