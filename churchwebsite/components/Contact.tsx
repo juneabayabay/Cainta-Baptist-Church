@@ -13,10 +13,11 @@ export function Contact() {
             eyebrow="Get in touch"
             title={
               <>
-                Say <span className="text-accent">hello</span>
+                We&apos;d love to{" "}
+                <span className="text-secondary">hear from you</span>
               </>
             }
-            description="Prayer requests, questions, or planning a visit — we would love to hear from you."
+            description="Prayer requests, questions about visiting, or just saying hello — reach out anytime."
           />
         </Reveal>
 
@@ -34,8 +35,8 @@ export function Contact() {
           </Reveal>
 
           <Reveal delayMs={70}>
-            <div className="card flex h-full flex-col justify-center bg-primary-dark px-5 py-7 text-white sm:px-7 sm:py-8">
-              <p className="section-eyebrow mb-3 text-white/50 before:bg-white/30">
+            <div className="card flex h-full flex-col justify-center bg-foreground px-5 py-7 text-white sm:px-7 sm:py-8">
+              <p className="section-eyebrow mb-3 text-white/50 before:bg-primary">
                 Prefer chat?
               </p>
               <h3 className="mb-3 font-serif text-xl font-semibold">
@@ -48,7 +49,7 @@ export function Contact() {
                 href={site.social.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-white text-sm"
+                className="btn btn-primary text-sm"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
                 Open Messenger

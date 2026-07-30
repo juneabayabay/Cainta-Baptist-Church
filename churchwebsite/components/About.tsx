@@ -15,11 +15,11 @@ export function About() {
             eyebrow="About us"
             title={
               <>
-                A church that loves Jesus —{" "}
-                <span className="text-accent">and loves people</span>
+                A church rooted in hope —{" "}
+                <span className="text-secondary">built on love</span>
               </>
             }
-            description="In Cainta, we gather to worship, open Scripture, and care for one another."
+            description="In Cainta, we worship together, grow in God's Word, and encourage one another through every season."
           />
         </Reveal>
 
@@ -46,7 +46,7 @@ export function About() {
         <Reveal delayMs={40}>
           <article
             className={`card mb-10 px-5 py-6 text-center sm:mb-12 sm:px-8 sm:py-8 ${
-              storyIsPlaceholder ? "border-dashed bg-cream/30" : ""
+              storyIsPlaceholder ? "border-dashed bg-secondary-light/40" : ""
             }`}
           >
             <p className="section-eyebrow section-eyebrow-center mb-3">
@@ -64,13 +64,13 @@ export function About() {
 
         <div className="grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
           <Reveal>
-            <figure className="card flex h-full flex-col bg-primary-dark px-6 py-8 text-white sm:px-8 sm:py-9">
-              <div className="mb-6 h-16 w-16 rounded-full bg-white/10" aria-hidden />
+            <figure className="card flex h-full flex-col bg-foreground px-6 py-8 text-white sm:px-8 sm:py-9">
+              <div className="mb-6 h-16 w-16 rounded-full bg-primary/20" aria-hidden />
               <figcaption>
                 <p className="font-serif text-xl font-semibold sm:text-2xl">
                   {site.pastor.name}
                 </p>
-                <p className="mt-1 text-sm font-medium tracking-wide text-accent uppercase">
+                <p className="mt-1 text-sm font-medium tracking-wide text-primary uppercase">
                   {site.pastor.title}
                 </p>
               </figcaption>
@@ -83,17 +83,18 @@ export function About() {
           <Reveal delayMs={80}>
             <div className="flex h-full flex-col justify-center px-1 py-2 text-center lg:text-left">
               <h3 className="mb-3 font-serif text-xl font-semibold sm:text-2xl">
-                You do not have to walk alone
+                Every day is a new beginning
               </h3>
               <p className="mb-6 text-[0.9375rem] leading-relaxed text-muted-dark sm:text-base">
-                Every person matters to God. Whether you are seeking hope,
-                belonging, or a fresh start — we are glad you are here.
+                God&apos;s mercies are new every morning. Whether you need
+                encouragement, community, or a fresh start — there is a place
+                for you here.
               </p>
               <a
                 href="#visit"
                 className="btn btn-primary mx-auto w-full max-w-xs lg:mx-0 lg:w-auto"
               >
-                See Sunday times
+                Plan your visit
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
             </div>

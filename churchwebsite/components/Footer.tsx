@@ -12,19 +12,17 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="bg-primary-dark text-white/70" role="contentinfo">
+    <footer className="bg-foreground text-white/70" role="contentinfo">
       <div className="mx-auto max-w-[1080px] px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
             <a
               href="#home"
-              className="font-serif text-base font-semibold text-white hover:text-accent"
+              className="font-serif text-base font-semibold text-white hover:text-primary"
             >
               {site.name}
             </a>
-            <p className="mt-1 text-xs text-white/50">
-              {site.address.line2}
-            </p>
+            <p className="mt-1 text-xs text-white/50">{site.address.line2}</p>
           </div>
 
           <nav aria-label="Footer">
@@ -33,7 +31,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-xs transition hover:text-accent"
+                    className="text-xs transition hover:text-primary"
                   >
                     {link.label}
                   </a>
@@ -48,14 +46,14 @@ export function Footer() {
               aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-accent"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-primary"
             >
               <FacebookIcon className="h-4 w-4" aria-hidden />
             </a>
             <a
               href={`mailto:${site.email}`}
               aria-label="Email"
-              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-accent"
+              className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-primary"
             >
               <Mail className="h-4 w-4" aria-hidden />
             </a>

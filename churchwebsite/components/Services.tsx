@@ -16,7 +16,7 @@ export function Services() {
             title={
               <>
                 More ways to{" "}
-                <span className="text-accent">grow together</span>
+                <span className="text-secondary">grow in hope</span>
               </>
             }
             description="Midweek prayer, Bible study, and serving our neighbors in Cainta."

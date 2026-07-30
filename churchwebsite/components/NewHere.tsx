@@ -16,11 +16,11 @@ export function NewHere() {
             eyebrow="First visit"
             title={
               <>
-                We saved a seat{" "}
-                <span className="text-accent">for you</span>
+                Your first Sunday is{" "}
+                <span className="text-secondary">simple</span>
               </>
             }
-            description="Walking into a new church can feel intimidating. Here is what you can expect — no surprises, just welcome."
+            description="No dress code stress, no perfect answers needed — just come as you are and let us welcome you."
           />
         </Reveal>
 
@@ -42,7 +42,7 @@ export function NewHere() {
         <Reveal delayMs={80}>
           <div className="mt-10 flex justify-center">
             <a href="#visit" className="btn btn-primary w-full max-w-xs sm:w-auto">
-              See times &amp; directions
+              See times &amp; map
             </a>
           </div>
         </Reveal>

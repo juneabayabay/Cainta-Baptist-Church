@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Peace & Welcome */
-  --background: #f8f6f2;
+  /* Hope & Light */
+  --background: #fff9f0;
   --surface: #ffffff;
-  --foreground: #333333;
-  --primary: #4a90e2;
-  --primary-hover: #3a7bc8;
-  --primary-dark: #2e6bad;
-  --secondary: #8faf8f;
-  --secondary-light: #e8f0e8;
-  --accent: #d4af37;
-  --accent-hover: #b8942f;
-  --muted: #666666;
-  --muted-dark: #444444;
-  --cream: #f0ede8;
-  --border-soft: #e5e0d8;
-  --footer: #2e6bad;
+  --foreground: #2c3e50;
+  --primary: #f4c542;
+  --primary-hover: #e5b530;
+  --secondary: #f7b267;
+  --secondary-hover: #e9a055;
+  --secondary-light: #fff3e6;
+  --accent: #f7b267;
+  --accent-hover: #e9a055;
+  --muted: #5d6d7e;
+  --muted-dark: #34495e;
+  --cream: #fff9f0;
+  --border-soft: #ebe4d8;
+  --footer: #2c3e50;
 }
 
 @theme inline {
@@ -24,8 +24,8 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
-  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
   --color-secondary-light: var(--secondary-light);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
@@ -66,11 +66,11 @@ video {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--primary) 25%, transparent);
+  background: color-mix(in srgb, var(--primary) 35%, transparent);
 }
 
 :focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--secondary);
   outline-offset: 3px;
 }
 
@@ -80,7 +80,7 @@ video {
   top: -100%;
   z-index: 100;
   border-radius: 999px;
-  background: var(--primary-dark);
+  background: var(--foreground);
   color: #fff;
   padding: 0.65rem 1.1rem;
   font-size: 0.9rem;
@@ -91,7 +91,6 @@ video {
   top: 1rem;
 }
 
-/* —— Layout —— */
 .section-shell {
   padding-block: 3.25rem;
 }
@@ -148,11 +147,10 @@ video {
 }
 
 .surface-navy {
-  background: var(--primary-dark);
+  background: var(--foreground);
   color: #fff;
 }
 
-/* —— Typography —— */
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -161,7 +159,7 @@ video {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--foreground);
 }
 
 .section-eyebrow::before {
@@ -169,7 +167,7 @@ video {
   display: block;
   width: 1.25rem;
   height: 2px;
-  background: var(--accent);
+  background: var(--primary);
   border-radius: 1px;
 }
 
@@ -186,12 +184,11 @@ video {
   color: var(--foreground);
 }
 
-/* —— Components —— */
 .card {
   border-radius: 1rem;
   border: 1px solid color-mix(in srgb, var(--foreground) 8%, transparent);
   background: var(--surface);
-  box-shadow: 0 1px 4px rgba(51, 51, 51, 0.05);
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.06);
 }
 
 @media (min-width: 640px) {
@@ -223,7 +220,7 @@ video {
 
 .btn-primary {
   background: var(--primary);
-  color: #fff;
+  color: var(--foreground);
 }
 
 .btn-primary:hover {
@@ -231,19 +228,19 @@ video {
 }
 
 .btn-secondary {
-  border: 1px solid color-mix(in srgb, var(--foreground) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--foreground) 18%, transparent);
   background: var(--surface);
   color: var(--foreground);
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary);
-  background: var(--primary);
+  border-color: var(--foreground);
+  background: var(--foreground);
   color: #fff;
 }
 
 .btn-ghost-light {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
   backdrop-filter: blur(8px);
@@ -251,29 +248,28 @@ video {
 
 .btn-ghost-light:hover {
   background: #fff;
-  color: var(--primary-dark);
+  color: var(--foreground);
 }
 
 .btn-white {
   background: #fff;
-  color: var(--primary-dark);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: var(--foreground);
+  box-shadow: 0 4px 20px rgba(44, 62, 80, 0.12);
 }
 
 .btn-white:hover {
   background: var(--cream);
 }
 
-.btn-gold {
-  background: var(--accent);
-  color: var(--foreground);
+.btn-navy {
+  background: var(--foreground);
+  color: #fff;
 }
 
-.btn-gold:hover {
-  background: var(--accent-hover);
+.btn-navy:hover {
+  background: var(--muted-dark);
 }
 
-/* —— Motion —— */
 .reveal {
   opacity: 0;
   transform: translateY(16px);

@@ -1,12 +1,12 @@
 export const site = {
   name: "Cainta Baptist Church",
   fullName: "Cainta Baptist Church",
-  tagline: "You are loved by God. Come find rest in Him.",
+  tagline: "A new day of hope starts here.",
   description:
-    "Cainta Baptist Church welcomes you. You are loved by God — come as you are this Sunday and find rest, hope, and a church family in Cainta.",
+    "Cainta Baptist Church — a welcoming family in Cainta, Rizal. Join us this Sunday for worship, friendship, and the hope found in Jesus.",
   verse: {
-    text: "Come to me, all who are tired and burdened, and I will give you rest.",
-    reference: "Matthew 11:28",
+    text: "The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning.",
+    reference: "Lamentations 3:22–23",
   },
   url: "https://caintabaptist.org",
   email: "caintabaptistchurchph@gmail.com",
@@ -18,70 +18,86 @@ export const site = {
   },
   address: {
     line1: "157 Marick Drive, Subdivision",
-    line2: "Cainta, Rizal, Philippines, 1900",
-    full: "157 Marick Drive, Subdivision, Cainta, Rizal, Philippines, 1900",
+    line2: "Cainta, Rizal 1900, Philippines",
+    full: "157 Marick Drive, Subdivision, Cainta, Rizal 1900, Philippines",
     mapsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
+    mapsSearchUrl:
       "https://www.google.com/maps/search/?api=1&query=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines",
-    /** Embed for the Visit section map */
+    wazeUrl:
+      "https://waze.com/ul?q=157+Marick+Drive+Subdivision+Cainta+Rizal+Philippines&navigate=yes",
     mapsEmbedUrl:
-      "https://maps.google.com/maps?q=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines&z=16&output=embed",
+      "https://maps.google.com/maps?q=157+Marick+Drive+Subdivision+Cainta+Rizal+1900+Philippines&z=17&output=embed",
   },
-  /** Practical first-visit answers — edit anytime */
+  visit: {
+    headline: "Everything you need for your first Sunday.",
+    tips: [
+      {
+        title: "Google Maps or Waze",
+        text: "Search “157 Marick Drive, Cainta” — both apps will guide you to our door.",
+      },
+      {
+        title: "Arrive a little early",
+        text: "Doors open before 8:00 AM. Arriving 10 minutes early helps you settle in.",
+      },
+      {
+        title: "Need help finding us?",
+        text: "Call or message us on Facebook — someone from our team will gladly assist.",
+      },
+    ],
+  },
   expect: [
     {
       title: "What to wear",
-      text: "Come as you are. Casual or Sunday best — both are welcome.",
+      text: "Come comfortable. Jeans or Sunday best — you are welcome either way.",
     },
     {
-      title: "How long is Sunday?",
-      text: "Small group starts at 8:00 AM. Worship is about 9:00–11:30 AM.",
+      title: "Sunday schedule",
+      text: "Small group at 8:00 AM, worship from 9:00–11:30 AM. Stay for coffee and conversation after.",
     },
     {
       title: "Kids & family",
-      text: "Children are welcome. The whole family belongs here.",
+      text: "Children are welcome in every part of our gathering. Your whole family belongs.",
     },
     {
-      title: "Parking & finding us",
-      text: "Use Google Maps for Marick Drive. Lost? Call or message us — we will help.",
+      title: "First-time guests",
+      text: "Look for a greeter at the door — they will help you find a seat and answer questions.",
     },
   ],
   pastor: {
     name: "Vien Olaer",
     title: "Pastor",
     quote:
-      "Come as you are. You don't need to be perfect. We are happy to walk with you.",
+      "Every new morning is a reminder that God gives fresh hope. You do not have to walk alone.",
   },
   vision:
-    "To be a loving church family in Cainta where every person can know Jesus, find rest, and grow in hope.",
+    "To be a church in Cainta where people discover new life in Jesus and grow in hope together.",
   mission:
-    "To welcome people as they are, share God's Word with simple hearts, and walk with them one Sunday at a time.",
-  /** Replace this when the church story is ready */
+    "To welcome everyone with warmth, teach God's Word clearly, and encourage one another every step of the way.",
   story: {
     title: "Our story",
     body: "",
     placeholder:
-      "This space is reserved for the story of Cainta Baptist Church — how God began this family, and how He continues to lead us. Coming soon.",
+      "The story of Cainta Baptist Church — how God began this family and where He is leading us — will be shared here soon.",
   },
   social: {
     facebook: "https://www.facebook.com/CaintaBaptistChurch",
     facebookName: "Cainta Baptist Church",
-    /** Leave empty until you have a real channel — icons stay hidden */
     youtube: "",
     instagram: "",
     messenger: "https://m.me/CaintaBaptistChurch",
     photos: "https://www.facebook.com/CaintaBaptistChurch/photos",
   },
-  /** Replace these with real church photos before launch */
   gallery: [
     {
       src: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1600&q=80",
       alt: "Worship together on Sunday",
-      caption: "We worship together",
+      caption: "Worship together",
     },
     {
       src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80",
       alt: "Church family sharing a warm moment",
-      caption: "We are a family",
+      caption: "A caring family",
     },
     {
       src: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1200&q=80",
@@ -90,18 +106,18 @@ export const site = {
     },
     {
       src: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
-      alt: "Friends praying and caring for each other",
-      caption: "We pray for one another",
+      alt: "Friends praying together",
+      caption: "We pray together",
     },
     {
       src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
       alt: "Music and praise during service",
-      caption: "We lift our voices",
+      caption: "Hope in song",
     },
     {
       src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
       alt: "People laughing and feeling welcome",
-      caption: "There is a place for you",
+      caption: "Joy in community",
     },
   ],
   hours: {
@@ -130,22 +146,22 @@ export const site = {
     {
       title: "Sunday Small Group",
       time: "Sunday · 8:00 AM – 9:00 AM",
-      description: "Meet friends, pray, and feel at home before the service.",
+      description: "Connect, pray, and get to know others before worship.",
     },
     {
       title: "Sunday Worship",
       time: "Sunday · 9:00 AM – 11:30 AM",
-      description: "Sing, hear God's Word, and leave with hope in your heart.",
+      description: "Sing, hear God's Word, and leave encouraged for the week ahead.",
     },
     {
       title: "Prayer & Bible Study",
       time: "Wednesday · 6:30 PM",
-      description: "Pray together and learn from the Bible midweek.",
+      description: "Midweek gathering for prayer and studying Scripture together.",
     },
     {
-      title: "Helping Others",
+      title: "Community Outreach",
       time: "As scheduled",
-      description: "We love and help people in our community.",
+      description: "Serving neighbors in Cainta with practical love and care.",
     },
   ],
 } as const;

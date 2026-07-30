@@ -1,4 +1,4 @@
-import { Clock, MapPin, Navigation } from "lucide-react";
+import { Clock, ExternalLink, MapPin, Navigation, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 import { site } from "@/lib/site";
@@ -12,20 +12,20 @@ export function Visit() {
             eyebrow="Plan your visit"
             title={
               <>
-                When &amp; where to{" "}
-                <span className="text-accent">find us</span>
+                Join us this{" "}
+                <span className="text-secondary">Sunday</span>
               </>
             }
-            description="Sunday times, our address, and a map — everything you need."
+            description={site.visit.headline}
           />
         </Reveal>
 
-        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid gap-5 lg:grid-cols-2">
           <Reveal>
             <div className="card overflow-hidden">
-              <div className="border-b border-[color:var(--foreground)]/6 px-5 py-4 sm:px-6">
+              <div className="border-b border-[color:var(--foreground)]/6 bg-secondary-light/40 px-5 py-4 sm:px-6">
                 <h3 className="flex items-center gap-2 font-serif text-lg font-semibold">
-                  <Clock className="h-5 w-5 text-primary" aria-hidden />
+                  <Clock className="h-5 w-5 text-secondary" aria-hidden />
                   Sunday schedule
                 </h3>
               </div>
@@ -41,59 +41,79 @@ export function Visit() {
                       </p>
                       <p className="text-sm text-muted">{service.description}</p>
                     </div>
-                    <p className="shrink-0 text-sm font-semibold text-primary">
+                    <p className="shrink-0 rounded-full bg-primary/15 px-3 py-1 text-sm font-semibold text-foreground">
                       {service.time.replace("Sunday · ", "")}
                     </p>
                   </li>
                 ))}
               </ul>
-              <p className="border-t border-[color:var(--foreground)]/6 bg-secondary-light/60 px-5 py-3.5 text-sm text-muted-dark sm:px-6">
-                Kids and families are welcome — bring everyone.
-              </p>
             </div>
           </Reveal>
 
-          <Reveal delayMs={80}>
-            <div className="card flex h-full flex-col bg-primary-dark px-5 py-6 text-white sm:px-6 sm:py-7">
+          <Reveal delayMs={70}>
+            <div className="card flex h-full flex-col bg-foreground px-5 py-6 text-white sm:px-6 sm:py-7">
               <h3 className="mb-4 flex items-center gap-2 font-serif text-lg font-semibold">
-                <MapPin className="h-5 w-5 text-accent" aria-hidden />
-                Location
+                <MapPin className="h-5 w-5 text-primary" aria-hidden />
+                Our address
               </h3>
-              <a
-                href={site.address.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mb-5 block rounded-xl border border-white/12 bg-white/5 px-4 py-4 transition hover:bg-white/10"
-              >
+              <address className="mb-6 not-italic">
                 <p className="font-medium">{site.address.line1}</p>
-                <p className="mt-1 text-sm text-white/65">{site.address.line2}</p>
-              </a>
-              <div className="mt-auto flex flex-col gap-2.5">
+                <p className="mt-1 text-sm text-white/70">{site.address.line2}</p>
+              </address>
+              <div className="mt-auto grid gap-2.5 sm:grid-cols-2">
                 <a
                   href={site.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-white text-sm"
+                  className="btn btn-primary text-sm"
                 >
                   <Navigation className="h-4 w-4" aria-hidden />
-                  Get directions
+                  Directions
+                </a>
+                <a
+                  href={site.address.wazeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost-light text-sm"
+                >
+                  Open in Waze
                 </a>
                 <a
                   href={`tel:${site.phone}`}
-                  className="btn btn-ghost-light text-sm"
+                  className="btn btn-ghost-light text-sm sm:col-span-2"
                 >
-                  Call {site.phoneDisplay}
+                  <Phone className="h-4 w-4" aria-hidden />
+                  {site.phoneDisplay}
                 </a>
               </div>
             </div>
           </Reveal>
         </div>
 
-        <Reveal delayMs={60}>
+        <Reveal delayMs={50}>
           <div className="card mt-5 overflow-hidden p-0">
-            <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
+            <div className="flex flex-col gap-4 border-b border-[color:var(--foreground)]/6 bg-secondary-light/30 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+              <div>
+                <p className="text-xs font-semibold tracking-[0.12em] text-muted uppercase">
+                  Map
+                </p>
+                <p className="mt-1 font-medium text-foreground">
+                  {site.address.full}
+                </p>
+              </div>
+              <a
+                href={site.address.mapsSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary shrink-0 px-4 py-2 text-sm"
+              >
+                Open in Google Maps
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </a>
+            </div>
+            <div className="relative aspect-[4/3] w-full sm:aspect-[21/9] lg:aspect-[2.4/1]">
               <iframe
-                title={`Map showing ${site.name}`}
+                title={`Map showing ${site.name} at ${site.address.full}`}
                 src={site.address.mapsEmbedUrl}
                 className="absolute inset-0 h-full w-full border-0"
                 loading="lazy"
@@ -103,6 +123,19 @@ export function Visit() {
             </div>
           </div>
         </Reveal>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-3">
+          {site.visit.tips.map((tip, i) => (
+            <Reveal key={tip.title} delayMs={i * 60}>
+              <article className="card h-full px-5 py-5">
+                <h4 className="mb-2 font-serif text-base font-semibold text-foreground">
+                  {tip.title}
+                </h4>
+                <p className="text-sm leading-relaxed text-muted">{tip.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
